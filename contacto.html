@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto — Providentia</title>
+<meta content="Agenda una llamada gratuita con Providentia. Cuéntanos sobre tu negocio y te presentamos una propuesta personalizada sin compromiso." name="description"/>
+<meta content="Contacto — Providentia" property="og:title"/>
+<meta content="Agenda una llamada gratuita. Te presentamos una propuesta personalizada para tu negocio." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="#00167a" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #00167a; --blue-dark: #000e52; --blue-mid: #0a1e8a;
+      --orange: #ff751f; --orange-hover: #e5610d;
+      --white: #ffffff; --cream: #faf8f5;
+      --gray-100: #f7f8fc; --gray-200: #eceef5;
+      --gray-400: #9aa3c2; --gray-600: #5a6281; --gray-800: #232846;
+      --font: 'Montserrat', system-ui, sans-serif;
+      --radius: 14px; --radius-lg: 22px;
+      --shadow-sm: 0 2px 8px rgba(0,22,122,.07);
+      --shadow-md: 0 8px 32px rgba(0,22,122,.12);
+      --shadow-lg: 0 24px 60px rgba(0,22,122,.18);
+      --transition: .28s cubic-bezier(.4,0,.2,1);
+      --max-w: 1200px;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: var(--font); color: var(--gray-800); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* ===== REVEAL ===== */
+    .reveal { opacity: 1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ===== NAVBAR ===== */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; background: rgba(250,248,245,.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 2px 20px rgba(0,22,122,.08); border-bottom: 1px solid rgba(0,22,122,.06); transition: var(--transition); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: var(--blue); font-size: .85rem; font-weight: 600; transition: color var(--transition); letter-spacing: .02em; }
+    .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+    .nav-cta { margin-left: 8px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--blue); border-radius: 2px; transition: var(--transition); }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999; background: var(--blue-dark); flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 80px 24px 40px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--white); font-size: 1.3rem; font-weight: 700; }
+    .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; line-height: 1; }
+
+    /* ===== BUTTONS ===== */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: .9rem; font-weight: 700; letter-spacing: .02em; cursor: pointer; border: none; transition: var(--transition); white-space: nowrap; text-decoration: none; }
+    .btn--primary { background: var(--orange); color: var(--white); }
+    .btn--primary:hover { background: var(--orange-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,117,31,.35); }
+    .btn--outline { background: transparent; color: var(--blue); border: 1.5px solid rgba(0,22,122,.3); }
+    .btn--outline:hover { background: rgba(0,22,122,.06); border-color: var(--blue); }
+    .btn--outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.35); }
+    .btn--outline-white:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      background: var(--cream); padding: 140px 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 95% 40%, rgba(255,117,31,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 5% 80%, rgba(0,22,122,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid-svg {
+      position: absolute; inset: 0; z-index: 0; opacity: .03;
+    }
+    .page-hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); background: rgba(255,117,31,.1); border-radius: 100px; padding: 5px 14px; margin-bottom: 16px; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.02em; color: var(--blue); margin-bottom: 18px; line-height: 1.15; }
+    .page-hero h1 span { color: var(--orange); }
+    .page-hero p { font-size: 1rem; color: var(--gray-600); max-width: 540px; line-height: 1.8; margin-bottom: 36px; }
+    .hero-quick-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .quick-link-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: 100px; padding: 8px 18px;
+      font-size: .82rem; font-weight: 600; color: var(--blue);
+      box-shadow: var(--shadow-sm); transition: var(--transition);
+    }
+    .quick-link-badge:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .quick-link-badge svg { flex-shrink: 0; }
+
+    /* ===== MAIN GRID ===== */
+    .contact-section { padding: 80px 0 100px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
+
+    /* ===== INFO PANEL ===== */
+    .info-panel { display: flex; flex-direction: column; gap: 40px; }
+    .info-block h3 { font-size: 1rem; font-weight: 800; color: var(--blue); margin-bottom: 6px; letter-spacing: -.01em; }
+    .info-block p { font-size: .88rem; color: var(--gray-600); line-height: 1.7; }
+
+    .contact-method {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 20px; border-radius: var(--radius);
+      border: 1.5px solid var(--gray-200); background: var(--white);
+      transition: var(--transition); text-decoration: none;
+    }
+    .contact-method:hover { border-color: var(--orange); box-shadow: var(--shadow-sm); transform: translateX(4px); }
+    .contact-method-icon {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-method-icon.orange { background: rgba(255,117,31,.1); color: var(--orange); }
+    .contact-method-icon.blue { background: rgba(0,22,122,.07); color: var(--blue); }
+    .contact-method-icon.green { background: rgba(37,211,102,.1); color: #25d366; }
+    .contact-method-text { display: flex; flex-direction: column; gap: 2px; }
+    .contact-method-label { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-400); }
+    .contact-method-value { font-size: .9rem; font-weight: 600; color: var(--gray-800); }
+
+    .social-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .social-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--gray-100); border-radius: 100px;
+      padding: 8px 16px; font-size: .8rem; font-weight: 600; color: var(--blue);
+      transition: var(--transition); text-decoration: none;
+    }
+    .social-chip:hover { background: var(--blue); color: var(--white); }
+
+    .trust-box {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+      border-radius: var(--radius-lg); padding: 32px 28px; color: var(--white);
+    }
+    .trust-box h4 { font-size: .95rem; font-weight: 800; margin-bottom: 16px; }
+    .trust-items { display: flex; flex-direction: column; gap: 12px; }
+    .trust-item { display: flex; align-items: center; gap: 10px; font-size: .83rem; color: rgba(255,255,255,.8); }
+    .trust-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; flex-shrink: 0; }
+
+    /* ===== FORM CARD ===== */
+    .form-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      border: 1.5px solid var(--gray-200);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-card h2 { font-size: 1.5rem; font-weight: 800; color: var(--blue); margin-bottom: 8px; }
+    .form-card > p { font-size: .88rem; color: var(--gray-600); margin-bottom: 32px; line-height: 1.7; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group.full { grid-column: 1 / -1; }
+    label { font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--gray-600); }
+    input, select, textarea {
+      font-family: var(--font);
+      background: var(--gray-100); border: 1.5px solid transparent;
+      border-radius: 10px; padding: 12px 16px;
+      font-size: .9rem; color: var(--gray-800);
+      transition: var(--transition); outline: none; width: 100%;
+    }
+    input::placeholder, textarea::placeholder { color: var(--gray-400); }
+    input:focus, select:focus, textarea:focus {
+      background: var(--white); border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(0,22,122,.08);
+    }
+    input.error, select.error, textarea.error { border-color: #e53935; }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239aa3c2' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+    textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+    .char-count { font-size: .72rem; color: var(--gray-400); text-align: right; }
+    .form-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 8px; }
+    .form-note { font-size: .78rem; color: var(--gray-400); display: flex; align-items: center; gap: 6px; }
+    .form-submit-btn {
+      background: var(--orange); color: var(--white);
+      border: none; border-radius: 10px; padding: 15px 36px;
+      font-size: .95rem; font-weight: 700; letter-spacing: .02em;
+      cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px;
+    }
+    .form-submit-btn:hover { background: var(--orange-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,117,31,.35); }
+    .form-submit-btn:disabled { opacity: .65; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    /* Success state */
+    .form-success {
+      display: none; text-align: center; padding: 60px 20px;
+    }
+    .form-success.show { display: block; }
+    .form-success .success-icon { font-size: 3.5rem; margin-bottom: 20px; }
+    .form-success h3 { font-size: 1.5rem; font-weight: 800; color: var(--blue); margin-bottom: 12px; }
+    .form-success p { color: var(--gray-600); font-size: .95rem; line-height: 1.7; }
+
+    /* ===== FAQ STRIP ===== */
+    .faq-section { padding: 64px 0; background: var(--gray-100); }
+    .faq-section h2 { font-size: 1.6rem; font-weight: 800; color: var(--blue); text-align: center; margin-bottom: 40px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    details.faq-item {
+      background: var(--white); border-radius: var(--radius);
+      border: 1.5px solid var(--gray-200); overflow: hidden;
+      transition: var(--transition);
+    }
+    details.faq-item[open] { border-color: var(--orange); }
+    details.faq-item summary {
+      padding: 20px 24px; cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      font-size: .9rem; font-weight: 700; color: var(--blue);
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary span.toggle { color: var(--orange); font-size: 1.2rem; font-weight: 900; flex-shrink: 0; }
+    .faq-body { padding: 0 24px 20px; font-size: .87rem; color: var(--gray-600); line-height: 1.75; }
+
+    /* ===== MAP / UBICACION ===== */
+    .location-section { padding: 80px 0; }
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .location-info h2 { font-size: 1.8rem; font-weight: 800; color: var(--blue); margin-bottom: 16px; }
+    .location-info p { color: var(--gray-600); font-size: .93rem; line-height: 1.8; margin-bottom: 28px; }
+    .location-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-size: .9rem; color: var(--gray-600); font-weight: 500; }
+    .location-detail svg { color: var(--orange); flex-shrink: 0; }
+    .map-placeholder {
+      background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+      border-radius: var(--radius-lg); height: 320px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+      border: 2px dashed var(--gray-200); color: var(--gray-400); text-align: center; padding: 20px;
+    }
+    .map-placeholder svg { opacity: .4; }
+    .map-placeholder p { font-size: .85rem; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner-section { padding: 0 0 80px; }
+    .cta-banner { background: var(--blue); border-radius: var(--radius-lg); padding: 60px 56px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; right: -60px; top: -60px; width: 280px; height: 280px; border-radius: 50%; background: rgba(255,117,31,.08); pointer-events: none; }
+    .cta-banner h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--white); max-width: 480px; line-height: 1.25; position: relative; }
+    .cta-banner h2 span { color: var(--orange); }
+    .cta-banner-btns { display: flex; gap: 14px; flex-wrap: wrap; position: relative; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--blue-dark); color: var(--white); padding: 56px 0 32px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-col h4 { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: 10px; transition: color var(--transition); }
+    .footer-col a:hover { color: var(--white); }
+    .footer-social { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .social-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); transition: var(--transition); }
+    .social-icon:hover { background: var(--orange); color: var(--white); }
+    .footer-legal { font-size: .78rem; color: rgba(255,255,255,.3); padding-top: 24px; border-top: 1px solid rgba(255,255,255,.08); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+      .cta-banner { padding: 40px 32px; }
+    }
+    @media (max-width: 720px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 32px 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 500px) {
+      .page-hero { padding: 120px 0 60px; }
+    }
+  </style>
+<meta content="index,follow" name="robots"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+<link rel="shortcut icon" href="/assets/favicon.png">
+</head>
+<body>
+<!-- ========== NAVBAR ========== -->
+<nav aria-label="Navegación principal" id="navbar">
+<div class="container">
+<div class="nav-inner">
+<a aria-label="Providentia — Inicio" class="nav-logo" href="index.html">
+<span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.25rem;color:#00167a;letter-spacing:-0.02em;">Providentia</span>
+</a>
+<ul class="nav-links" role="list"><a href="index.html">Inicio</a>
+<a href="index.html#servicios">Servicios</a>
+<a href="productos.html">Planes</a>
+<a href="nosotros.html">Nosotros</a>
+<a href="redes-sociales.html">Redes</a>
+<a class="active" href="contacto.html">Contacto</a>
+</ul>
+<a class="btn btn--primary nav-cta" href="contacto.html">Agenda una llamada</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú" class="hamburger" id="hamburgerBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Mobile menu -->
+<div aria-hidden="true" aria-label="Menú móvil" class="mobile-menu" id="mobileMenu" role="dialog">
+<button aria-label="Cerrar menú" class="mobile-close" id="mobileClose">×</button>
+<a class="mobile-nav-link" href="index.html#servicios">Servicios</a>
+<a class="mobile-nav-link" href="index.html#planes">Planes</a>
+<a class="mobile-nav-link" href="nosotros.html">Nosotros</a>
+<a class="mobile-nav-link" href="redes-sociales.html">Redes Sociales</a>
+<a class="mobile-nav-link" href="productos.html">Catálogo</a>
+<a class="mobile-nav-link" href="contacto.html">Contacto</a>
+<a class="btn btn--primary" href="contacto.html" style="margin-top:16px;">Agenda una llamada</a>
+</div>
+<!-- ========== HERO ========== -->
+<section aria-label="Encabezado de contacto" class="page-hero">
+<svg aria-hidden="true" class="hero-grid-svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="60" id="grid" patternunits="userSpaceOnUse" width="60">
+<path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00167a" stroke-width="0.6"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+<div class="container">
+<div class="page-hero-content">
+<span class="tag reveal">Hablemos</span>
+<h1 class="reveal reveal-delay-1">
+        El primer paso hacia<br/><span>más clientes reales.</span>
+</h1>
+<p class="reveal reveal-delay-2">
+        Cuéntanos sobre tu negocio y te respondemos en menos de 24 horas con una propuesta personalizada — sin compromiso, sin letras pequeñas.
+      </p>
+<div class="hero-quick-links reveal reveal-delay-3">
+<a class="quick-link-badge" href="https://wa.me/593XXXXXXXXX" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="#25d366" height="14" viewbox="0 0 24 24" width="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
+          WhatsApp directo
+        </a>
+<a class="quick-link-badge" href="/cdn-cgi/l/email-protection#781017141938080a170e111c1d160c1119561b1715">
+<svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+<span class="__cf_email__" data-cfemail="244c4b48456454564b524d40414a504d450a474b49">[email protected]</span>
+</a>
+<a class="quick-link-badge" href="productos.html">
+<svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M9 9h6M9 12h6M9 15h4"></path></svg>
+          Ver catálogo de planes
+        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== MAIN CONTACT SECTION ========== -->
+<section aria-label="Formulario de contacto" class="contact-section">
+<div class="container">
+<div class="contact-grid">
+<!-- INFO PANEL -->
+<div class="info-panel reveal">
+<div class="info-block">
+<h3>¿Cómo trabajamos?</h3>
+<p>Recibes una respuesta en menos de 24 horas. Agendamos una llamada corta para entender tu negocio y te presentamos una propuesta a medida.</p>
+</div>
+<!-- Contact Methods -->
+<div style="display:flex;flex-direction:column;gap:12px;">
+<a class="contact-method" href="https://wa.me/593XXXXXXXXX" rel="noopener noreferrer" target="_blank">
+<div class="contact-method-icon green">
+<svg aria-hidden="true" fill="#25d366" height="20" viewbox="0 0 24 24" width="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
+</div>
+<div class="contact-method-text">
+<span class="contact-method-label">WhatsApp</span>
+<span class="contact-method-value">+593 XXX XXX XXX</span>
+</div>
+<svg aria-hidden="true" fill="none" height="16" stroke="#9aa3c2" stroke-width="2" style="margin-left:auto;" viewbox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+<a class="contact-method" href="/cdn-cgi/l/email-protection#90f8fffcf1d0e0e2ffe6f9f4f5fee4f9f1bef3fffd">
+<div class="contact-method-icon orange">
+<svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+</div>
+<div class="contact-method-text">
+<span class="contact-method-label">Email</span>
+<span class="contact-method-value"><span class="__cf_email__" data-cfemail="a7cfc8cbc6e7d7d5c8d1cec3c2c9d3cec689c4c8ca">[email protected]</span></span>
+</div>
+<svg aria-hidden="true" fill="none" height="16" stroke="#9aa3c2" stroke-width="2" style="margin-left:auto;" viewbox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+<a class="contact-method" href="https://instagram.com/providentiag" rel="noopener noreferrer" target="_blank">
+<div class="contact-method-icon blue">
+<svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</div>
+<div class="contact-method-text">
+<span class="contact-method-label">Instagram</span>
+<span class="contact-method-value">@providentiag</span>
+</div>
+<svg aria-hidden="true" fill="none" height="16" stroke="#9aa3c2" stroke-width="2" style="margin-left:auto;" viewbox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+</div>
+<!-- Social -->
+<div>
+<p style="font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);margin-bottom:12px;">Síguenos</p>
+<div class="social-row">
+<a class="social-chip" href="https://instagram.com/providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><rect height="20" rx="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg>
+              Instagram
+            </a>
+<a class="social-chip" href="https://tiktok.com/@providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.07a8.16 8.16 0 0 0 4.77 1.52V7.15a4.85 4.85 0 0 1-1-.46z"></path></svg>
+              TikTok
+            </a>
+<a class="social-chip" href="https://facebook.com/providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              Facebook
+            </a>
+<a class="social-chip" href="https://linkedin.com/company/providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              LinkedIn
+            </a>
+</div>
+</div>
+<!-- Trust box -->
+<div class="trust-box">
+<h4>¿Por qué elegirnos?</h4>
+<div class="trust-items">
+<div class="trust-item"><span class="trust-dot"></span>Respuesta garantizada en menos de 24 h</div>
+<div class="trust-item"><span class="trust-dot"></span>Propuesta personalizada sin costo</div>
+<div class="trust-item"><span class="trust-dot"></span>Sin contratos anuales forzosos</div>
+<div class="trust-item"><span class="trust-dot"></span>Equipo 100% dedicado a tu marca</div>
+<div class="trust-item"><span class="trust-dot"></span>Más de 70M de views generados</div>
+</div>
+</div>
+</div>
+<!-- FORM CARD -->
+<div class="form-card reveal reveal-delay-1" id="formContainer">
+<h2>Solicita tu propuesta</h2>
+<p>Completa el formulario y te respondemos en menos de 24 horas con un plan adaptado a tu negocio.</p>
+<form id="contactForm" novalidate="">
+<div class="form-grid">
+<div class="form-group">
+<label for="nombre">Nombre completo *</label>
+<input autocomplete="name" id="nombre" name="nombre" placeholder="Tu nombre" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="empresa">Empresa / Negocio *</label>
+<input autocomplete="organization" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email *</label>
+<input autocomplete="email" id="email" name="email" placeholder="tu@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="whatsapp">WhatsApp</label>
+<input autocomplete="tel" id="whatsapp" name="whatsapp" placeholder="+593 XXX XXX XXX" type="tel"/>
+</div>
+<div class="form-group full">
+<label for="tamano">Tamaño del negocio *</label>
+<select id="tamano" name="tamano" required="">
+<option disabled="" selected="" value="">Selecciona una opción</option>
+<option value="solo">Solo (freelancer / emprendimiento)</option>
+<option value="micro">Micro (2–10 colaboradores)</option>
+<option value="pequena">Pequeña (11–50 colaboradores)</option>
+<option value="mediana">Mediana (50+ colaboradores)</option>
+</select>
+</div>
+<div class="form-group full">
+<label for="objetivo">Objetivo principal *</label>
+<select id="objetivo" name="objetivo" required="">
+<option disabled="" selected="" value="">¿Qué buscas lograr?</option>
+<option value="clientes">Generar más clientes / leads</option>
+<option value="imagen">Mejorar imagen de marca</option>
+<option value="alcance">Aumentar alcance y visibilidad</option>
+<option value="rebranding">Rebranding completo</option>
+<option value="web">Diseño de sitio web</option>
+<option value="asesoramiento">Asesoramiento para creadores / marcas digitales</option>
+<option value="todo">Todo lo anterior</option>
+</select>
+</div>
+<div class="form-group full">
+<label for="plan">Plan de interés</label>
+<select id="plan" name="plan">
+<option selected="" value="">Sin preferencia</option>
+<option value="tester">Tester — $59,99/mes</option>
+<option value="basico">Básico — $129,99/mes</option>
+<option value="basico-plus">Básico+ — $199,99/mes</option>
+<option value="plus">Plus — $399,99/mes</option>
+<option value="pro">Pro — $499,99/mes</option>
+<option value="pro-plus">Pro+ — $749,99/mes</option>
+<option value="elite">Elite — $1,199,99/mes</option>
+<option value="otro">Servicio puntual / otro</option>
+</select>
+</div>
+<div class="form-group full">
+<label for="mensaje">Cuéntanos sobre tu negocio</label>
+<textarea id="mensaje" maxlength="600" name="mensaje" placeholder="¿A qué te dedicas? ¿Cuál es tu mayor reto de marketing ahora mismo? Cualquier detalle que nos ayude a preparar tu propuesta..."></textarea>
+<div class="char-count"><span id="charCount">0</span> / 600</div>
+</div>
+</div>
+<div class="form-footer">
+<span class="form-note">
+<svg aria-hidden="true" fill="none" height="13" stroke="#9aa3c2" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Tus datos están seguros. No spam.
+            </span>
+<button class="form-submit-btn" id="submitBtn" type="submit">
+              Solicitar propuesta
+              <svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</button>
+</div>
+</form>
+<!-- Success State -->
+<div aria-live="polite" class="form-success" id="formSuccess">
+<div class="success-icon">🎉</div>
+<h3>¡Recibimos tu mensaje!</h3>
+<p>Te contactaremos en menos de 24 horas con una propuesta personalizada para tu negocio.<br/><br/>
+          Mientras tanto, puedes revisar nuestro <a href="productos.html" style="color:var(--orange);font-weight:700;">catálogo de planes</a> o escribirnos por WhatsApp si tienes prisa.</p>
+<a class="btn btn--primary" href="https://wa.me/593XXXXXXXXX" rel="noopener noreferrer" style="margin-top:24px;" target="_blank">
+            Hablar por WhatsApp →
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== FAQ ========== -->
+<section aria-label="Preguntas frecuentes" class="faq-section">
+<div class="container">
+<h2 class="reveal">Preguntas frecuentes</h2>
+<div class="faq-grid">
+<details class="faq-item reveal">
+<summary>¿Cuánto tiempo tarda en ver resultados? <span aria-hidden="true" class="toggle">+</span></summary>
+<div class="faq-body">Los primeros resultados visibles (mayor alcance, engagement y tráfico) se notan entre los 30 y 60 días. Los resultados en generación de clientes suelen consolidarse entre el segundo y tercer mes, dependiendo del plan y el punto de partida de tu marca.</div>
+</details>
+<details class="faq-item reveal reveal-delay-1">
+<summary>¿Necesito tener redes activas? <span aria-hidden="true" class="toggle">+</span></summary>
+<div class="faq-body">No. Podemos partir desde cero: crear los perfiles, definir tu identidad visual y lanzar tu presencia digital completa. Si ya tienes cuentas, hacemos un diagnóstico y las optimizamos desde el día uno.</div>
+</details>
+<details class="faq-item reveal">
+<summary>¿Hay contratos anuales? <span aria-hidden="true" class="toggle">+</span></summary>
+<div class="faq-body">No forzamos contratos anuales. Trabajamos en ciclos mensuales para que tengas flexibilidad. Eso sí, la mayoría de nuestros clientes se quedan por los resultados, no por obligación.</div>
+</details>
+<details class="faq-item reveal reveal-delay-1">
+<summary>¿Puedo cambiar de plan? <span aria-hidden="true" class="toggle">+</span></summary>
+<div class="faq-body">Sí, puedes escalar o ajustar tu plan al inicio de cada ciclo mensual sin penalidades. Nuestro objetivo es que estés exactamente en el plan que tu negocio necesita en cada etapa.</div>
+</details>
+<details class="faq-item reveal">
+<summary>¿El contenido lo producen ustedes? <span aria-hidden="true" class="toggle">+</span></summary>
+<div class="faq-body">Sí, completamente. Nuestro equipo se encarga de la estrategia, diseño gráfico, redacción, edición de video y programación. Solo necesitamos que nos compartas material visual de tu negocio (fotos, videos) cuando sea relevante.</div>
+</details>
+<details class="faq-item reveal reveal-delay-1">
+<summary>¿Trabajan con cualquier tipo de negocio? <span aria-hidden="true" class="toggle">+</span></summary>
+<div class="faq-body">Trabajamos con negocios de prácticamente todos los sectores: restaurantes, clínicas, boutiques, inmobiliarias, servicios profesionales, e-commerce y marcas personales. Si tienes dudas sobre tu industria específica, escríbenos y te lo confirmamos.</div>
+</details>
+</div>
+</div>
+</section>
+<!-- ========== UBICACION ========== -->
+<section aria-label="Ubicación y cobertura" class="location-section">
+<div class="container">
+<div class="location-grid">
+<div class="location-info reveal">
+<span class="tag">Cobertura</span>
+<h2>Trabajo remoto,<br/>resultados reales.</h2>
+<p>Trabajamos con negocios de todo Ecuador y América Latina. Nuestro modelo es 100% remoto y digital, lo que nos permite atenderte con la misma calidad sin importar tu ubicación.</p>
+<div class="location-detail">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Quito, Ecuador — operación digital global
+        </div>
+<div class="location-detail">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Respuesta en horario de oficina (lunes–viernes 8h–18h)
+        </div>
+<div class="location-detail">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Llamadas de seguimiento por Zoom / Meet / WhatsApp
+        </div>
+</div>
+<div class="reveal reveal-delay-1">
+<div aria-label="Mapa de cobertura" class="map-placeholder">
+<svg aria-hidden="true" fill="none" height="48" stroke="currentColor" stroke-width="1" viewbox="0 0 24 24" width="48"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<p style="font-weight:700;color:var(--blue);">Ecuador &amp; América Latina</p>
+<p>Cobertura digital sin límites</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== CTA BANNER ========== -->
+<section class="cta-banner-section">
+<div class="container">
+<div class="cta-banner reveal">
+<h2>Tu competencia ya está invirtiendo en digital.<br/><span>¿Vas a esperar?</span></h2>
+<div class="cta-banner-btns">
+<a class="btn btn--primary" href="https://wa.me/593XXXXXXXXX" rel="noopener noreferrer" style="font-size:1rem;padding:16px 36px;" target="_blank">WhatsApp ahora →</a>
+<a class="btn btn--outline-white" href="productos.html" style="font-size:1rem;padding:16px 36px;">Ver planes</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== FOOTER ========== -->
+<footer aria-label="Pie de página">
+<div class="container">
+<div class="footer-inner">
+<div>
+<span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;color:rgba(255,255,255,0.65);letter-spacing:-0.02em;display:block;margin-bottom:12px;">Providentia</span>
+<p style="font-size:.83rem;color:rgba(255,255,255,.4);max-width:220px;line-height:1.7;">Redes sociales que generan clientes reales.</p>
+<div class="footer-social" style="margin-top:16px;">
+<a aria-label="Instagram" class="social-icon" href="https://instagram.com/providentiag" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><rect height="20" rx="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg></a>
+<a aria-label="TikTok" class="social-icon" href="https://tiktok.com/@providentiag" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.07a8.16 8.16 0 0 0 4.77 1.52V7.15a4.85 4.85 0 0 1-1-.46z"></path></svg></a>
+<a aria-label="Facebook" class="social-icon" href="https://facebook.com/providentiag" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+<a aria-label="LinkedIn" class="social-icon" href="https://linkedin.com/company/providentiag" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Páginas</h4>
+<a href="index.html">Inicio</a>
+<a href="nosotros.html">Nosotros</a>
+<a href="productos.html">Catálogo</a>
+<a href="redes-sociales.html">Manejo de Redes</a>
+<a href="contacto.html" style="color:var(--white);">Contacto</a>
+<a href="privacidad.html">Política de Privacidad</a>
+</div>
+<div class="footer-col">
+<h4>Servicios</h4>
+<a href="index.html#servicios">Manejo de Redes</a>
+<a href="index.html#servicios">Rebranding</a>
+<a href="index.html#servicios">Diseño Web</a>
+<a href="index.html#servicios">Asesoramiento</a>
+</div>
+<div class="footer-col">
+<h4>Contacto</h4>
+<a href="contacto.html" style="color:var(--white);">Solicitar propuesta</a>
+<a href="https://wa.me/593XXXXXXXXX" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+<a href="https://instagram.com/providentiag" rel="noopener noreferrer" target="_blank">@providentiag</a>
+<a href="/cdn-cgi/l/email-protection#8fe7e0e3eecffffde0f9e6ebeae1fbe6eea1ece0e2"><span class="__cf_email__" data-cfemail="365e595a5776464459405f525358425f571855595b">[email protected]</span></a>
+</div>
+</div>
+<p class="footer-legal">© <span id="currentYear"></span> Providentia Group. Todos los derechos reservados. · <a href="privacidad.html" style="color:inherit;">Política de privacidad</a></p>
+</div>
+</footer>
+<!-- ========== JAVASCRIPT ========== -->
+<script></script></body></html>

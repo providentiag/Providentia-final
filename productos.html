@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Planes Estratégicos — Providentia</title>
+<meta content="Planes diseñados para generar clientes, no solo seguidores. Elige tu plan ideal y escala con Providentia." name="description"/>
+<meta content="Planes Estratégicos — Providentia" property="og:title"/>
+<meta content="Planes diseñados para generar clientes, no solo seguidores. Elige tu plan ideal y escala con Providentia." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="assets/og-providentia.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="#00167a" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #00167a; --blue-dark: #000e52; --blue-mid: #0a1e8a;
+      --orange: #ff751f; --orange-hover: #e5610d;
+      --white: #ffffff; --cream: #faf8f5;
+      --gray-100: #f7f8fc; --gray-200: #eceef5;
+      --gray-400: #9aa3c2; --gray-600: #5a6281; --gray-800: #232846;
+      --font: 'Montserrat', system-ui, sans-serif;
+      --radius: 14px; --radius-lg: 22px;
+      --shadow-sm: 0 2px 8px rgba(0,22,122,.07);
+      --shadow-md: 0 8px 32px rgba(0,22,122,.12);
+      --transition: .28s cubic-bezier(.4,0,.2,1);
+      --max-w: 1200px;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: var(--font); color: var(--gray-800); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* NAVBAR */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; background: rgba(250,248,245,.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 2px 20px rgba(0,22,122,.08); border-bottom: 1px solid rgba(0,22,122,.06); transition: var(--transition); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: var(--blue); font-size: .85rem; font-weight: 600; transition: color var(--transition); letter-spacing: .02em; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta { margin-left: 8px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--blue); border-radius: 2px; transition: var(--transition); }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999; background: var(--blue-dark); flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 80px 24px 40px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--white); font-size: 1.3rem; font-weight: 700; }
+    .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; line-height: 1; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 100px; font-weight: 700; font-size: .88rem; letter-spacing: .02em; transition: var(--transition); border: 2px solid transparent; cursor: pointer; }
+    .btn--primary { background: var(--orange); color: var(--white); }
+    .btn--primary:hover { background: var(--orange-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,117,31,.35); }
+    .btn--outline { border-color: var(--blue); color: var(--blue); }
+    .btn--outline:hover { background: rgba(0,22,122,.06); }
+    .tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); background: rgba(255,117,31,.1); border-radius: 100px; padding: 5px 14px; margin-bottom: 14px; }
+
+    /* HERO */
+    .page-hero { background: var(--cream); padding: 140px 0 80px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 90% 40%, rgba(255,117,31,.07) 0%, transparent 70%); pointer-events: none; }
+    .page-hero-content { position: relative; z-index: 1; max-width: 680px; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.02em; color: var(--blue); margin-bottom: 18px; line-height: 1.15; }
+    .page-hero h1 span { color: var(--orange); }
+    .page-hero p { font-size: 1rem; color: var(--gray-600); max-width: 500px; line-height: 1.8; margin-bottom: 32px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* SECTION */
+    .section { padding: 80px 0; }
+    .section--gray { background: var(--gray-100); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; color: var(--blue); margin-bottom: 12px; }
+    .section-header p { color: var(--gray-600); font-size: .95rem; max-width: 520px; margin: 0 auto; line-height: 1.8; }
+
+    /* PLANS GRID */
+    .plans-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .plan-card {
+      background: var(--white); border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 36px 28px;
+      position: relative; display: flex; flex-direction: column;
+      transition: var(--transition);
+    }
+    .plan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .plan-card.recommended { border-color: var(--orange); background: linear-gradient(160deg, #fff9f5 0%, var(--white) 60%); box-shadow: 0 8px 40px rgba(255,117,31,.14); }
+    .plan-card.premium { border-color: var(--blue); background: linear-gradient(160deg, #f0f2ff 0%, var(--white) 60%); }
+    .plan-badge { position: absolute; top: -14px; left: 28px; background: var(--orange); color: var(--white); font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; white-space: nowrap; }
+    .plan-badge.blue { background: var(--blue); }
+    .plan-price-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px; }
+    .plan-amount { font-size: 2.2rem; font-weight: 900; color: var(--blue); letter-spacing: -.03em; line-height: 1; }
+    .plan-period { font-size: .8rem; color: var(--gray-400); font-weight: 500; }
+    .plan-name { font-size: 1.1rem; font-weight: 800; color: var(--blue); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+    .plan-tagline { font-size: .85rem; color: var(--gray-600); margin-bottom: 20px; line-height: 1.6; padding-bottom: 20px; border-bottom: 1px solid var(--gray-200); }
+    .plan-networks { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .net-tag { font-size: .7rem; font-weight: 700; background: var(--gray-100); color: var(--blue); padding: 3px 10px; border-radius: 100px; letter-spacing: .03em; }
+    .plan-features-list { display: flex; flex-direction: column; gap: 9px; flex: 1; margin-bottom: 28px; }
+    .plan-feature { font-size: .83rem; color: var(--gray-600); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+    .plan-feature .check { color: var(--orange); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .plan-feature-group { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-400); margin: 14px 0 6px; }
+    .plan-cta { margin-top: auto; }
+    .plan-cta .btn { width: 100%; justify-content: center; }
+
+    /* SERVICIOS COMPLEMENTARIOS */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .service-card { background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius); padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; transition: var(--transition); }
+    .service-card:hover { border-color: var(--orange); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+    .service-name { font-size: .95rem; font-weight: 800; color: var(--blue); line-height: 1.3; }
+    .service-price { font-size: 1.1rem; font-weight: 900; color: var(--orange); }
+    .service-desc { font-size: .8rem; color: var(--gray-600); line-height: 1.6; flex: 1; }
+    .service-features { display: flex; flex-direction: column; gap: 5px; }
+    .service-feature { font-size: .78rem; color: var(--gray-600); display: flex; gap: 6px; }
+    .service-feature::before { content: "✓"; color: var(--orange); font-weight: 800; flex-shrink: 0; }
+
+    /* CTA BANNER */
+    .cta-banner { background: var(--blue); border-radius: var(--radius-lg); padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-banner h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--white); max-width: 480px; line-height: 1.25; }
+    .cta-banner h2 span { color: var(--orange); }
+
+    /* FOOTER */
+    footer { background: var(--blue-dark); color: var(--white); padding: 56px 0 32px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-col h4 { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: 10px; transition: color var(--transition); }
+    .footer-col a:hover { color: var(--white); }
+    .footer-legal { text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.06); font-size: .76rem; color: rgba(255,255,255,.28); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .cta-banner { padding: 36px 24px; text-align: center; justify-content: center; }
+      .page-hero { padding: 120px 0 60px; }
+    }
+  
+    /* A11y + UX polish */
+    .skip-link{position:absolute;left:-999px;top:12px;background:var(--blue);color:var(--white);padding:10px 14px;border-radius:12px;z-index:2000}
+    .skip-link:focus{left:12px;outline:3px solid rgba(255,117,31,.55);}
+    a:focus-visible, button:focus-visible{outline:3px solid rgba(255,117,31,.55); outline-offset:3px; border-radius:12px;}
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto !important}
+      .reveal{transition:none !important; transform:none !important}
+      .btn{transition:none !important}
+      .plan-card:hover, .service-card:hover{transform:none !important}
+    }
+
+    /* Comparison table */
+    .compare-wrap{overflow:auto;border-radius:var(--radius-lg);border:1.5px solid var(--gray-200);background:var(--white);box-shadow:var(--shadow-sm);}
+    table.compare{width:100%;border-collapse:collapse;min-width:840px;}
+    table.compare th, table.compare td{padding:14px 16px;border-bottom:1px solid var(--gray-200);text-align:left;font-size:.86rem;color:var(--gray-600);vertical-align:top}
+    table.compare th{background:linear-gradient(180deg, var(--gray-100), #fff);color:var(--blue);font-weight:800;letter-spacing:.02em}
+    table.compare td strong{color:var(--blue);}
+    .pill{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:800;border-radius:999px;padding:6px 10px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+    .pill.orange{background:rgba(255,117,31,.12);color:var(--orange)}
+    .pill.blue{background:rgba(0,22,122,.10);color:var(--blue)}
+
+    /* Why cards */
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+    .why-card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:26px 22px;transition:var(--transition);}
+    .why-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-color:rgba(255,117,31,.55)}
+    .why-title{font-size:.95rem;font-weight:900;color:var(--blue);margin-bottom:8px;line-height:1.25}
+    .why-desc{font-size:.82rem;color:var(--gray-600);line-height:1.7}
+
+    /* FAQ */
+    .faq{max-width:880px;margin:0 auto}
+    details.faq-item{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+    details.faq-item summary{cursor:pointer;font-weight:800;color:var(--blue);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    details.faq-item summary::-webkit-details-marker{display:none}
+    .faq-body{color:var(--gray-600);font-size:.86rem;line-height:1.8;margin-top:10px}
+
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Providentia", "url": "https://example.com", "sameAs": ["https://instagram.com/providentiag"], "description": "Agencia de redes sociales y crecimiento digital. Planes diseñados para generar clientes, no solo seguidores."}</script>
+<meta content="index,follow" name="robots"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+<link rel="shortcut icon" href="/assets/favicon.png">
+</head>
+<body>
+<a class="skip-link" href="#planes">Saltar al contenido</a>
+<nav aria-label="Navegación principal" id="navbar">
+<div class="container nav-inner">
+<a aria-label="Providentia - Inicio" class="nav-logo" href="index.html">
+<span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.25rem;color:#00167a;letter-spacing:-0.02em;">Providentia</span>
+</a>
+<div class="nav-links"><a href="index.html">Inicio</a>
+<a href="index.html#servicios">Servicios</a>
+<a class="active" href="productos.html">Planes</a>
+<a href="nosotros.html">Nosotros</a>
+<a href="redes-sociales.html">Redes</a>
+<a href="contacto.html">Contacto</a>
+</div>
+<div class="nav-cta">
+<a class="btn btn--primary" href="contacto.html">Agenda una llamada</a>
+</div>
+<button aria-expanded="false" aria-label="Abrir menú" class="hamburger" id="hamburgerBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div aria-label="Menú móvil" class="mobile-menu" id="mobileMenu" role="dialog">
+<button aria-label="Cerrar menú" class="mobile-close" id="mobileClose">✕</button>
+<a class="mobile-nav-link" href="index.html">Inicio</a>
+<a class="mobile-nav-link" href="index.html#servicios">Servicios</a>
+<a class="mobile-nav-link" href="productos.html">Catálogo</a>
+<a class="mobile-nav-link" href="nosotros.html">Nosotros</a>
+<a class="mobile-nav-link" href="redes-sociales.html">Redes Sociales</a>
+<a class="mobile-nav-link" href="contacto.html">Contacto</a>
+<a class="btn btn--primary" href="contacto.html">Agenda una llamada</a>
+</div>
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<div class="page-hero-content">
+<span class="tag">Catálogo completo</span>
+<h1>Planes diseñados para <span>generar clientes</span>,<br/>no solo seguidores</h1>
+<p>No vendemos publicaciones. Construimos presencia digital estratégica que convierte atención en ventas. Empieza con el plan ideal hoy y escala cuando tu negocio crezca.</p>
+<div class="hero-ctas">
+<a class="btn btn--primary" href="#comparativa">Comparar planes</a>
+<a class="btn btn--outline" href="contacto.html">Hablar con un estratega</a>
+</div>
+</div>
+</div>
+</section>
+<!-- PLANES -->
+<section class="section section--gray" id="planes">
+<div class="container">
+<div class="section-header reveal">
+<span class="tag">Planes mensuales</span>
+<h2>Encuentra tu plan ideal</h2>
+<p>Sin contratos anuales forzosos, sin letras pequeñas. Escala o cambia de plan cuando quieras.</p>
+</div>
+<div class="plans-grid">
+<!-- TESTER -->
+<div class="plan-card reveal">
+<div class="plan-badge blue">Accesible</div>
+<div class="plan-name">Tester</div>
+<div class="plan-price-row"><span class="plan-amount">$59,99</span><span class="plan-period">/mes</span></div>
+<p class="plan-tagline">Ideal para negocios pequeños que quieren validar su presencia en Instagram.</p>
+<div class="plan-networks">
+<span class="net-tag">Instagram</span>
+</div>
+<ul class="plan-features-list">
+<li class="plan-feature"><span class="check">✓</span> Gestión de Instagram</li>
+<li class="plan-feature"><span class="check">✓</span> 2 Reels por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 1 Carrusel por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 2 Historias por semana</li>
+<li class="plan-feature"><span class="check">✓</span> Reporte básico de rendimiento</li>
+</ul>
+<div class="plan-cta">
+<a class="btn btn--primary" href="contacto.html?plan=tester">Elegir este plan</a>
+</div>
+</div>
+<!-- BÁSICO -->
+<div class="plan-card reveal">
+<div class="plan-name">Básico</div>
+<div class="plan-price-row"><span class="plan-amount">$129,99</span><span class="plan-period">/mes</span></div>
+<p class="plan-tagline">Para negocios que quieren estructura y crecimiento constante.</p>
+<div class="plan-networks">
+<span class="net-tag">Instagram</span>
+</div>
+<ul class="plan-features-list">
+<li class="plan-feature"><span class="check">✓</span> Gestión de Instagram</li>
+<li class="plan-feature"><span class="check">✓</span> Estrategia básica de contenido</li>
+<li class="plan-feature"><span class="check">✓</span> Optimización de perfil</li>
+<li class="plan-feature"><span class="check">✓</span> Diagnóstico inicial básico</li>
+<li class="plan-feature"><span class="check">✓</span> Línea gráfica definida</li>
+<li class="plan-feature"><span class="check">✓</span> 4 Reels por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 3 Carruseles por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 7 Historias por semana</li>
+<li class="plan-feature"><span class="check">✓</span> Reporte mensual</li>
+</ul>
+<div class="plan-cta">
+<a class="btn btn--primary" href="contacto.html?plan=basico">Elegir este plan</a>
+</div>
+</div>
+<!-- BÁSICO + -->
+<div class="plan-card reveal">
+<div class="plan-name">Básico +</div>
+<div class="plan-price-row"><span class="plan-amount">$199,99</span><span class="plan-period">/mes</span></div>
+<p class="plan-tagline">Para marcas que quieren expandirse en múltiples plataformas.</p>
+<div class="plan-networks">
+<span class="net-tag">Instagram</span><span class="net-tag">TikTok</span><span class="net-tag">Facebook</span><span class="net-tag">Pinterest</span>
+</div>
+<ul class="plan-features-list">
+<li class="plan-feature"><span class="check">✓</span> Estrategia básica multicanal</li>
+<li class="plan-feature"><span class="check">✓</span> Optimización completa</li>
+<li class="plan-feature"><span class="check">✓</span> Diagnóstico básico+</li>
+<li class="plan-feature"><span class="check">✓</span> Línea gráfica</li>
+<li class="plan-feature"><span class="check">✓</span> Reporte inicial estratégico</li>
+<li class="plan-feature"><span class="check">✓</span> 5 Reels por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 5 Carruseles por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 10 Historias por semana</li>
+<li class="plan-feature"><span class="check">✓</span> Reporte mensual</li>
+</ul>
+<div class="plan-cta">
+<a class="btn btn--primary" href="contacto.html?plan=basicoplus">Elegir este plan</a>
+</div>
+</div>
+<!-- PLUS -->
+<div class="plan-card recommended reveal">
+<div class="plan-badge">Recomendado</div>
+<div class="plan-name">Plus</div>
+<div class="plan-price-row"><span class="plan-amount">$399,99</span><span class="plan-period">/mes</span></div>
+<p class="plan-tagline">Para empresas que quieren crecimiento serio y estructurado.</p>
+<div class="plan-networks">
+<span class="net-tag">Instagram</span><span class="net-tag">TikTok</span><span class="net-tag">Facebook</span><span class="net-tag">Pinterest</span>
+</div>
+<ul class="plan-features-list">
+<li class="plan-feature"><span class="check">✓</span> Estrategia profunda personalizada</li>
+<li class="plan-feature"><span class="check">✓</span> Diagnóstico completo</li>
+<li class="plan-feature"><span class="check">✓</span> Línea gráfica profesional</li>
+<li class="plan-feature"><span class="check">✓</span> Reporte inicial estratégico</li>
+<li class="plan-feature"><span class="check">✓</span> Buyer Persona definido</li>
+<li class="plan-feature"><span class="check">✓</span> Automatización simple</li>
+<li class="plan-feature"><span class="check">✓</span> 7 Reels por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 7 Carruseles por semana</li>
+<li class="plan-feature"><span class="check">✓</span> 15 Historias por semana</li>
+<li class="plan-feature"><span class="check">✓</span> Reportes cada 15 días</li>
+</ul>
+<div class="plan-cta">
+<a class="btn btn--primary" href="contacto.html?plan=plus">Elegir este plan</a>
+</div>
+</div>
+<!-- PRO -->
+<div class="plan-card reveal">
+<div class="plan-name">Pro</div>
+<div class="plan-price-row"><span class="plan-amount">$499,99</span><span class="plan-period">/mes</span></div>
+<p class="plan-tagline">Para empresas que quieren crecimiento + conversión.</p>
+<div class="plan-networks">
+<span class="net-tag">Instagram</span><span class="net-tag">TikTok</span><span class="net-tag">Facebook</span><span class="net-tag">GBP</span><span class="net-tag">Pinterest</span>
+</div>
+<ul class="plan-features-list">
+<li class="plan-feature"><span class="check">✓</span> Todo lo del plan Plus</li>
+<li class="plan-feature"><span class="check">✓</span> Buyer Persona</li>
+<li class="plan-feature"><span class="check">✓</span> Sesión estratégica 1:1 mensual</li>
+<li class="plan-feature"><span class="check">✓</span> Gestión de comunidad (DMs)</li>
+<li class="plan-feature"><span class="check">✓</span> Copywriting de conversión</li>
+<li class="plan-feature"><span class="check">✓</span> Análisis mensual de competencia</li>
+<li class="plan-feature"><span class="check">✓</span> 10 Reels / semana</li>
+<li class="plan-feature"><span class="check">✓</span> 10 Carruseles / semana</li>
+<li class="plan-feature"><span class="check">✓</span> 20 Historias / semana</li>
+<li class="plan-feature"><span class="check">✓</span> Reporte avanzado cada 15 días</li>
+</ul>
+<div class="plan-cta">
+<a class="btn btn--primary" href="contacto.html?plan=pro">Elegir este plan</a>
+</div>
+</div>
+<!-- PRO+ -->
+<div class="plan-card premium reveal">
+<div class="plan-badge">Premium</div>
+<div class="plan-name">Pro +</div>
+<div class="plan-price-row"><span class="plan-amount">$999,99</span><span class="plan-period">/mes</span></div>
+<p class="plan-tagline">Solución integral de crecimiento digital y conversión.</p>
+<div class="plan-networks">
+<span class="net-tag">Instagram</span><span class="net-tag">TikTok</span><span class="net-tag">Facebook</span><span class="net-tag">GBP</span><span class="net-tag">Pinterest</span><span class="net-tag">YouTube</span>
+</div>
+<ul class="plan-features-list">
+<li class="plan-feature"><span class="check">✓</span> Todo lo del plan Pro</li>
+<li class="plan-feature"><span class="check">✓</span> Estrategia completa omnicanal</li>
+<li class="plan-feature"><span class="check">✓</span> Gestión de comunidad avanzada</li>
+<li class="plan-feature"><span class="check">✓</span> Campaña viral mensual</li>
+<li class="plan-feature"><span class="check">✓</span> Creación de piezas para anuncios</li>
+<li class="plan-feature"><span class="check">✓</span> Landing page mensual</li>
+<li class="plan-feature"><span class="check">✓</span> Account Manager dedicado</li>
+<li class="plan-feature"><span class="check">✓</span> 20 Reels / semana</li>
+<li class="plan-feature"><span class="check">✓</span> 20 Carruseles / semana</li>
+<li class="plan-feature"><span class="check">✓</span> 20 Historias / semana</li>
+<li class="plan-feature"><span class="check">✓</span> Reporte ejecutivo semanal</li>
+</ul>
+<div class="plan-cta">
+<a class="btn btn--primary" href="contacto.html?plan=proplus">Elegir este plan</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- POR QUÉ PROVIDENTIA -->
+<section class="section" id="porque">
+<div class="container">
+<div class="section-header reveal">
+<span class="tag">Diferencial</span>
+<h2>No somos una agencia tradicional</h2>
+<p>Estrategia + contenido + automatización para que tus redes no solo crezcan, sino que vendan.</p>
+</div>
+<div class="why-grid">
+<div class="why-card reveal">
+<div class="why-title">Enfoque en ROI</div>
+<div class="why-desc">Cada pieza tiene un propósito: atraer, educar o convertir. Menos “por publicar” y más resultados medibles.</div>
+</div>
+<div class="why-card reveal">
+<div class="why-title">Estrategia antes que diseño</div>
+<div class="why-desc">Primero definimos objetivos, buyer persona y posicionamiento. Luego ejecutamos con consistencia y criterio.</div>
+</div>
+<div class="why-card reveal">
+<div class="why-title">Escalabilidad real</div>
+<div class="why-desc">Puedes empezar simple y crecer a un sistema omnicanal con reportes, procesos y automatizaciones.</div>
+</div>
+<div class="why-card reveal">
+<div class="why-title">Transparencia</div>
+<div class="why-desc">Reportes claros, métricas relevantes y siguientes pasos. Sin “vanity metrics” como único argumento.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPARATIVA -->
+<section class="section section--gray" id="comparativa">
+<div class="container">
+<div class="section-header reveal">
+<span class="tag">Comparativa</span>
+<h2>Elige con claridad</h2>
+<p>Una vista rápida para entender qué incluye cada plan y cuál te conviene según tu etapa.</p>
+</div>
+<div aria-label="Tabla comparativa de planes" class="compare-wrap reveal">
+<table class="compare">
+<thead>
+<tr>
+<th>Plan</th>
+<th>Plataformas</th>
+<th>Estrategia</th>
+<th>Producción</th>
+<th>Reportes</th>
+<th>Ideal para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tester</strong> <span class="pill blue">Inicio</span></td>
+<td>Instagram</td>
+<td>—</td>
+<td>2 Reels/sem + 1 Carrusel/sem + 2 Historias/sem</td>
+<td>Básico</td>
+<td>Validar presencia y constancia</td>
+</tr>
+<tr>
+<td><strong>Básico</strong></td>
+<td>Instagram</td>
+<td><span class="pill blue">Básica</span></td>
+<td>4 Reels/sem + 3 Carruseles/sem + 7 Historias/sem</td>
+<td>Mensual</td>
+<td>Ordenar contenido y crecer con estructura</td>
+</tr>
+<tr>
+<td><strong>Básico+</strong></td>
+<td>IG, TikTok, Facebook, Pinterest</td>
+<td><span class="pill blue">Básica</span></td>
+<td>5 Reels/sem + 5 Carruseles/sem + 10 Historias/sem</td>
+<td>Inicial + mensual</td>
+<td>Expandir canales sin perder coherencia</td>
+</tr>
+<tr>
+<td><strong>Plus</strong> <span class="pill orange">Recomendado</span></td>
+<td>IG, TikTok, Facebook, Pinterest</td>
+<td><span class="pill orange">Profunda</span></td>
+<td>7 Reels/sem + 7 Carruseles/sem + 15 Historias/sem</td>
+<td>Cada 15 días</td>
+<td>Crecimiento serio + posicionamiento</td>
+</tr>
+<tr>
+<td><strong>Pro</strong></td>
+<td>IG, TikTok, Facebook, GBP, Pinterest</td>
+<td><span class="pill orange">Profunda</span></td>
+<td>10 Reels/sem + 10 Carruseles/sem + 20 Historias/sem</td>
+<td>Avanzado (15 días)</td>
+<td>Conversión + comunidad + competencia</td>
+</tr>
+<tr>
+<td><strong>Pro+</strong> <span class="pill blue">Premium</span></td>
+<td>IG, TikTok, Facebook, GBP, Pinterest, YouTube</td>
+<td><span class="pill blue">Completa</span></td>
+<td>20 Reels/sem + 20 Carruseles/sem + 20 Historias/sem</td>
+<td>Ejecutivo semanal</td>
+<td>Omnicanal + campañas + conversión</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="section" id="faq">
+<div class="container">
+<div class="section-header reveal">
+<span class="tag">Preguntas frecuentes</span>
+<h2>Resolvemos dudas rápido</h2>
+<p>Para que tomes una decisión segura y sin fricción.</p>
+</div>
+<div class="faq">
+<details class="faq-item reveal">
+<summary>¿Hay contrato anual o permanencia? <span aria-hidden="true">+</span></summary>
+<div class="faq-body">No. Trabajamos con planes mensuales. Puedes escalar, pausar o cambiar de plan según tu etapa.</div>
+</details>
+<details class="faq-item reveal">
+<summary>¿Ustedes graban el contenido? <span aria-hidden="true">+</span></summary>
+<div class="faq-body">Depende del plan y la logística. Podemos trabajar con material del cliente o coordinar producción. En la llamada definimos el flujo ideal.</div>
+</details>
+<details class="faq-item reveal">
+<summary>¿Cuándo veo resultados? <span aria-hidden="true">+</span></summary>
+<div class="faq-body">Normalmente se ven señales claras entre 2 y 6 semanas: mejora de perfil, consistencia, retención y crecimiento. Conversión depende de oferta, nicho y seguimiento.</div>
+</details>
+<details class="faq-item reveal">
+<summary>¿Qué necesito para empezar? <span aria-hidden="true">+</span></summary>
+<div class="faq-body">Accesos a redes, brief de negocio, oferta y objetivos. Nosotros nos encargamos del diagnóstico, estrategia y plan de ejecución.</div>
+</details>
+</div>
+</div>
+</section>
+<!-- SERVICIOS COMPLEMENTARIOS -->
+<section class="section" id="complementarios">
+<div class="container">
+<div class="section-header reveal">
+<span class="tag">A la carta</span>
+<h2>Servicios complementarios</h2>
+<p>Potencia tu plan con servicios específicos o contrátelos de forma independiente según lo que necesitas.</p>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="service-name">Rebranding Profesional</div>
+<div class="service-price">$199 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">pago único</span></div>
+<ul class="service-features">
+<li>Rediseño de identidad visual</li>
+<li>Paleta de colores y tipografías</li>
+<li>Feed estratégico</li>
+<li>Guía básica de uso</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Diseño Profesional de Página Web</div>
+<div class="service-price">$299 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">pago único</span></div>
+<ul class="service-features">
+<li>Landing optimizada para conversión</li>
+<li>Diseño moderno y responsive</li>
+<li>Integración WhatsApp</li>
+<li>SEO básico</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Estudio de Competencia</div>
+<div class="service-price">$99 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">pago único</span></div>
+<ul class="service-features">
+<li>Análisis de 3–5 competidores</li>
+<li>Estrategias utilizadas</li>
+<li>Oportunidades detectadas</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Estudio de Nicho</div>
+<div class="service-price">$49 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">pago único</span></div>
+<ul class="service-features">
+<li>Identificación de público ideal</li>
+<li>Problemas y deseos principales</li>
+<li>Tendencias del mercado</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Banco de Hooks Personalizado</div>
+<div class="service-price">$49 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">pago único</span></div>
+<ul class="service-features">
+<li>100 hooks adaptados a tu nicho</li>
+<li>Hooks emocionales, educativos y de venta</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Setup Google My Business</div>
+<div class="service-price">$79 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">pago único</span></div>
+<ul class="service-features">
+<li>Creación y optimización completa</li>
+<li>Categorías estratégicas</li>
+<li>Optimización visual</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Community Manager Personalizado</div>
+<div class="service-price">$299 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">/mes</span></div>
+<ul class="service-features">
+<li>Gestión de mensajes</li>
+<li>Moderación de comentarios</li>
+<li>Cierre básico de ventas</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Plantilla Notion para Contenido</div>
+<div class="service-price">$29 <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">pago único</span></div>
+<ul class="service-features">
+<li>Banco de ideas</li>
+<li>Calendario editorial</li>
+<li>Sistema de métricas</li>
+</ul>
+</div>
+<div class="service-card reveal">
+<div class="service-name">Automatización de Ventas (CRM + Funnel)</div>
+<div class="service-price">$899 setup <span style="font-size:.8rem;font-weight:500;color:var(--gray-400);">+ $199/mes</span></div>
+<ul class="service-features">
+<li>Embudo de ventas completo</li>
+<li>CRM integrado</li>
+<li>Automatización WhatsApp</li>
+<li>Email marketing</li>
+<li>Pipeline de seguimiento</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA BANNER -->
+<section class="section section--gray">
+<div class="container">
+<div class="cta-banner reveal">
+<h2>Tu competencia ya está invirtiendo en digital.<br/><span>¿Vas a esperar?</span></h2>
+<a class="btn btn--primary" href="contacto.html" style="font-size:1rem;padding:16px 36px;">Quiero crecer ahora →</a>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-inner">
+<div>
+<span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;color:rgba(255,255,255,0.65);letter-spacing:-0.02em;display:block;margin-bottom:12px;">Providentia</span>
+<p style="font-size:.83rem;color:rgba(255,255,255,.4);max-width:220px;line-height:1.7;">Redes sociales que generan clientes reales.</p>
+</div>
+<div class="footer-col">
+<h4>Páginas</h4>
+<a href="index.html">Inicio</a>
+<a href="productos.html">Catálogo</a>
+<a href="redes-sociales.html">Manejo de Redes</a>
+<a href="privacidad.html">Política de Privacidad</a>
+</div>
+<div class="footer-col">
+<h4>Planes</h4>
+<a href="#planes">Tester</a>
+<a href="#planes">Básico</a>
+<a href="#planes">Plus</a>
+<a href="#planes">Pro+</a>
+</div>
+<div class="footer-col">
+<h4>Contacto</h4>
+<a href="contacto.html">Solicitar propuesta</a>
+<a href="https://wa.me/593XXXXXXXXX" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+<a href="https://instagram.com/providentiag" rel="noopener noreferrer" target="_blank">@providentiag</a>
+</div>
+</div>
+<p class="footer-legal">© <span id="currentYear"></span> Providentia Group. Todos los derechos reservados.</p>
+</div>
+</footer>
+<script>
+  // Year
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  // Mobile menu controls (a11y friendly)
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+  const focusableSelector = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+  let lastFocusedEl = null;
+
+  function openMenu() {
+    lastFocusedEl = document.activeElement;
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-modal', 'true');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+
+    // Focus first focusable
+    const first = mobileMenu.querySelector(focusableSelector);
+    first && first.focus();
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    lastFocusedEl && lastFocusedEl.focus();
+  }
+
+  hamburgerBtn.addEventListener('click', openMenu);
+  mobileClose.addEventListener('click', closeMenu);
+
+  // Close on link click
+  document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', closeMenu));
+
+  // Close on ESC + trap focus
+  document.addEventListener('keydown', (e) => {
+    if (!mobileMenu.classList.contains('open')) return;
+
+    if (e.key === 'Escape') closeMenu();
+
+    if (e.key === 'Tab') {
+      const focusable = [...mobileMenu.querySelectorAll(focusableSelector)].filter(el => !el.hasAttribute('disabled'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // FAQ summary icon toggle (visual only)
+  document.querySelectorAll('details.faq-item').forEach(d => {
+    d.addEventListener('toggle', () => {
+      const s = d.querySelector('summary span[aria-hidden="true"]');
+      if (!s) return;
+      s.textContent = d.open ? '−' : '+';
+    });
+  });
+</script>
+<script>
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const map = {
+    '': 'index.html',
+    'index.html': 'index.html',
+    'nosotros.html': 'nosotros.html',
+    'productos.html': 'productos.html',
+    'catalogo.html': 'catalogo.html',
+    'contacto.html': 'contacto.html'
+  };
+  const current = map[path] || path;
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if(href === current) a.classList.add('active');
+  });
+  const y = document.getElementById('year');
+  if(y) y.textContent = String(new Date().getFullYear());
+})();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const planes = document.querySelector("#planes, .plans-grid")?.closest("section");
+  const comparativa = document.querySelector("#comparativa, .comparison-section");
+  const faq = document.querySelector("#faq, .faq-section");
+  const cta = document.querySelector("#cta, .final-cta, .cta-section");
+
+  // Move comparativa below planes
+  if (planes && comparativa) {
+    planes.parentNode.insertBefore(comparativa, planes.nextSibling);
+  }
+
+  // Move FAQ before final CTA
+  if (faq && cta) {
+    cta.parentNode.insertBefore(faq, cta);
+  }
+});
+</script>
+</body>
+</html>

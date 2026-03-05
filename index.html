@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Providentia — Redes Sociales que Generan Clientes</title>
+<meta content="Providentia maneja profesionalmente tus redes sociales enfocándose en generar clientes reales, no solo likes. Estrategia, producción y optimización." name="description"/>
+<meta content="Providentia — Redes Sociales que Generan Clientes" property="og:title"/>
+<meta content="Manejamos profesionalmente tus redes sociales para que generen clientes de verdad." property="og:description"/>
+<meta content="https://providentia.com/og-image.jpg" property="og:image"/>
+<meta content="https://providentia.com" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --nav-height: 84px;
+      --blue: #00167a;
+      --blue-dark: #000e52;
+      --blue-mid: #0a1e8a;
+      --orange: #ff751f;
+      --orange-hover: #e5610d;
+      --white: #ffffff;
+      --cream: #faf8f5;
+      --gray-100: #f7f8fc;
+      --gray-200: #eceef5;
+      --gray-400: #9aa3c2;
+      --gray-600: #5a6281;
+      --gray-800: #232846;
+      --font-display: 'Montserrat', system-ui, sans-serif;
+      --font-body: 'Montserrat', system-ui, sans-serif;
+      --radius: 14px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 2px 8px rgba(0,22,122,.07);
+      --shadow-md: 0 8px 32px rgba(0,22,122,.12);
+      --shadow-lg: 0 24px 60px rgba(0,22,122,.18);
+      --transition: .28s cubic-bezier(.4,0,.2,1);
+      --max-w: 1200px;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    section[id] { scroll-margin-top: 90px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-800);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button, input, select, textarea { font-family: inherit; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section--dark { background: var(--blue); color: var(--white); }
+    .section--gray { background: var(--gray-100); }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .tag::before { content: '— '; }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.18; }
+    h1 { font-size: clamp(2.1rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -.02em; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 700; letter-spacing: -.01em; }
+    h3 { font-size: 1.1rem; font-weight: 700; }
+    .highlight { color: var(--orange); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn--primary { background: var(--orange); color: var(--white); }
+    .btn--primary:hover { background: var(--orange-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,117,31,.35); }
+    .btn--outline {
+      background: transparent;
+      color: var(--blue);
+      border: 1.5px solid rgba(0,22,122,.3);
+    }
+    .btn--outline:hover { background: rgba(0,22,122,.06); border-color: var(--blue); }
+    .btn--outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.35);
+    }
+    .btn--outline-white:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
+    .btn--outline-dark {
+      background: transparent;
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
+    }
+    .btn--outline-dark:hover { background: var(--blue); color: var(--white); }
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 18px 0;
+      background: transparent;
+      transition: var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(250,248,245,.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 2px 20px rgba(0,22,122,.08);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,22,122,.06);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      color: var(--blue);
+      font-size: .85rem; font-weight: 600;
+      transition: color var(--transition); letter-spacing: .02em;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    #navbar.scrolled .nav-links a { color: var(--blue); }
+    #navbar.scrolled .nav-links a:hover { color: var(--orange); }
+    #navbar.scrolled .hamburger span { background: var(--blue); }
+    .nav-cta { margin-left: 8px; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--blue); border-radius: 2px; transition: var(--transition);
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999;
+      background: var(--blue-dark);
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+      padding: 80px 24px 40px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--white); font-size: 1.3rem; font-weight: 700; letter-spacing: -.01em; }
+    .mobile-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; color: var(--white);
+      font-size: 2rem; cursor: pointer; line-height: 1;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      background: var(--cream);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 140px 0 80px;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0; opacity: .035;
+    }
+    .hero-gradient {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 90% 35%, rgba(255,117,31,.09) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 5% 85%, rgba(0,22,122,.07) 0%, transparent 60%);
+    }
+    /* Decorative orange circle */
+    .hero-deco {
+      position: absolute; right: -80px; top: 50%; transform: translateY(-50%);
+      width: 520px; height: 520px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,117,31,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,22,122,.07);
+      border: 1px solid rgba(0,22,122,.14);
+      border-radius: 100px; padding: 7px 16px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .06em;
+      color: var(--blue); margin-bottom: 28px; text-transform: uppercase;
+    }
+    .hero-badge-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.35} }
+    .hero-title { color: var(--blue); margin-bottom: 24px; }
+    .hero-sub { font-size: 1rem; color: var(--gray-600); max-width: 520px; margin-bottom: 40px; line-height: 1.8; font-weight: 400; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+
+    /* ===== STATS STRIP ===== */
+    .stats-strip {
+      display: flex; gap: 40px; flex-wrap: wrap; align-items: center;
+      padding-top: 48px; border-top: 1px solid rgba(0,22,122,.1);
+      margin-top: 16px;
+    }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; }
+    .stat-number { font-size: 1.9rem; font-weight: 900; color: var(--blue); letter-spacing: -.03em; line-height: 1; }
+    .stat-number .stat-plus { color: var(--orange); }
+    .stat-label { font-size: .78rem; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: .08em; }
+    .stat-divider { width: 1px; height: 40px; background: rgba(0,22,122,.12); }
+
+    /* ===== PLATFORMS BANNER ===== */
+    .platforms-banner {
+      background: var(--blue);
+      padding: 28px 0;
+    }
+    .platforms-inner {
+      display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+      justify-content: center;
+    }
+    .platforms-label {
+      font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.45);
+      white-space: nowrap;
+    }
+    .platforms-list {
+      display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center;
+    }
+    .platform-item {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.7);
+      font-size: .85rem; font-weight: 600;
+      transition: color var(--transition);
+    }
+    .platform-item:hover { color: var(--white); }
+    .platform-item svg { opacity: .7; transition: opacity var(--transition); }
+    .platform-item:hover svg { opacity: 1; }
+
+    /* ===== PROBLEM / SOLUTION ===== */
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .problem-col h2 { margin-bottom: 20px; }
+    .problem-col p { color: var(--gray-600); line-height: 1.8; margin-bottom: 28px; font-size: .95rem; }
+    .problem-list { display: flex; flex-direction: column; gap: 14px; }
+    .problem-item { display: flex; gap: 12px; align-items: flex-start; }
+    .problem-icon {
+      flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;
+    }
+    .problem-icon.bad { background: #ffe5d9; color: #cc3300; }
+    .problem-icon.good { background: #e0eaff; color: var(--blue); }
+    .problem-item p { font-size: .9rem; color: var(--gray-600); margin: 0; line-height: 1.55; }
+
+    /* ===== SERVICES ===== */
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
+    .service-card {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 40px;
+      transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-icon {
+      width: 50px; height: 50px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+      border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
+    }
+    .service-card h3 { margin-bottom: 10px; color: var(--blue); font-size: 1.05rem; }
+    .service-card p { color: var(--gray-600); margin-bottom: 20px; font-size: .88rem; line-height: 1.75; }
+    .service-features { display: flex; flex-direction: column; gap: 8px; }
+    .service-features li { font-size: .84rem; color: var(--gray-600); display: flex; align-items: center; gap: 8px; }
+    .service-features li::before { content: ''; flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); }
+
+    /* ===== PROCESS ===== */
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 36px;
+      left: calc(12.5% + 24px); right: calc(12.5% + 24px); height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+    }
+    .process-step { text-align: center; position: relative; }
+    .step-number {
+      width: 72px; height: 72px; border-radius: 50%; background: var(--blue);
+      color: var(--white); font-size: 1.4rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; border: 4px solid var(--white);
+      box-shadow: var(--shadow-md); position: relative; z-index: 1;
+      transition: var(--transition);
+    }
+    .process-step:hover .step-number { background: var(--orange); transform: scale(1.08); }
+    .process-step h3 { margin-bottom: 8px; color: var(--blue); font-size: .95rem; }
+    .process-step p { font-size: .83rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* ===== PLANS ===== */
+    #planes { padding: 96px 0; background: var(--gray-100); }
+    .plans-intro { text-align: center; max-width: 580px; margin: 0 auto 56px; }
+    .plans-intro h2 { margin-bottom: 14px; }
+    .plans-intro p { color: var(--gray-600); font-size: .95rem; }
+    .plans-scroll-wrapper { overflow-x: auto; padding-bottom: 16px; }
+    .plans-grid { display: flex; gap: 18px; min-width: max-content; padding: 20px 4px 8px; }
+    .plan-card {
+      background: var(--white); border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 30px 24px;
+      width: 230px; flex-shrink: 0;
+      transition: var(--transition); position: relative; display: flex; flex-direction: column;
+    }
+    .plan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .plan-card.recommended {
+      border-color: var(--orange);
+      background: linear-gradient(170deg, #fff9f5 0%, var(--white) 50%);
+      box-shadow: 0 8px 40px rgba(255,117,31,.16);
+    }
+    .plan-card.accessible { border-color: var(--blue); }
+    .plan-badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--orange); color: var(--white);
+      font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 100px; white-space: nowrap;
+    }
+    .plan-badge.badge-blue { background: var(--blue); }
+    .plan-name { font-weight: 800; font-size: 1.05rem; color: var(--blue); margin-bottom: 5px; }
+    .plan-networks { font-size: .74rem; color: var(--gray-400); margin-bottom: 18px; line-height: 1.45; font-weight: 500; }
+    .plan-price { margin-bottom: 22px; }
+    .plan-price .amount { font-size: 1.9rem; font-weight: 900; color: var(--blue); letter-spacing: -.03em; }
+    .plan-price .period { font-size: .78rem; color: var(--gray-400); margin-left: 3px; font-weight: 500; }
+    .plan-features { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .plan-feature { font-size: .78rem; color: var(--gray-600); display: flex; gap: 7px; align-items: flex-start; line-height: 1.45; }
+    .plan-feature .fi { flex-shrink: 0; margin-top: 1px; font-style: normal; }
+    .fi-check { color: #22c55e; font-weight: 700; }
+    .fi-x { color: #cbd5e1; }
+    .plan-cta { margin-top: 22px; }
+    .plan-cta .btn { width: 100%; justify-content: center; font-size: .82rem; padding: 11px 16px; }
+
+    /* Compare table */
+    .compare-section { margin-top: 60px; }
+    .compare-toggle { text-align: center; margin-bottom: 24px; }
+    .compare-toggle button {
+      background: none; border: 1.5px solid var(--blue); color: var(--blue);
+      border-radius: 8px; padding: 10px 24px; font-size: .88rem; font-weight: 700;
+      cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body);
+    }
+    .compare-toggle button:hover { background: var(--blue); color: var(--white); }
+    .compare-table-wrap { overflow-x: auto; display: none; }
+    .compare-table-wrap.open { display: block; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: .8rem; min-width: 800px; }
+    .compare-table th {
+      background: var(--blue); color: var(--white);
+      padding: 12px 10px; text-align: center; font-weight: 700; font-size: .75rem; letter-spacing: .04em;
+    }
+    .compare-table th:first-child { text-align: left; min-width: 150px; }
+    .compare-table td { padding: 11px 10px; border-bottom: 1px solid var(--gray-200); text-align: center; color: var(--gray-600); }
+    .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--gray-800); }
+    .compare-table tr:nth-child(even) td { background: var(--gray-100); }
+    .compare-table tr:hover td { background: #eef1fa; }
+    .compare-table .rec-col { background: rgba(255,117,31,.06) !important; }
+
+    /* ===== CONTACT — cream/white bg ===== */
+    #contacto { padding: 96px 0; background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .contact-left h2 { color: var(--blue); margin-bottom: 16px; }
+    .contact-left p { color: var(--gray-600); line-height: 1.8; margin-bottom: 32px; font-size: .95rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 14px; }
+    .contact-info-item { display: flex; align-items: center; gap: 12px; color: var(--gray-600); font-size: .9rem; }
+    .contact-info-item svg { color: var(--orange); flex-shrink: 0; }
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 40px 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: .78rem; font-weight: 700; color: var(--blue); margin-bottom: 7px; letter-spacing: .05em; text-transform: uppercase; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: var(--gray-100);
+      border: 1px solid var(--gray-200); border-radius: 8px;
+      padding: 12px 16px; color: var(--gray-800); font-size: .92rem;
+      transition: border-color var(--transition); outline: none;
+      font-family: var(--font-body);
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--gray-400); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--orange); background: var(--white); }
+    .form-group select { color: var(--gray-600); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit .btn { width: 100%; justify-content: center; padding: 15px; font-size: .95rem; }
+    .form-notification {
+      display: none; background: #f0fdf4; border: 1px solid #86efac;
+      border-radius: 10px; padding: 16px 20px; color: #16a34a;
+      font-size: .9rem; margin-top: 16px; text-align: center; font-weight: 600;
+    }
+    .form-notification.show { display: block; }
+
+    /* ===== FOOTER — dark ===== */
+    footer { background: var(--blue-dark); border-top: 1px solid rgba(255,255,255,.07); padding: 40px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: .82rem; color: rgba(255,255,255,.4); transition: color var(--transition); font-weight: 500; }
+    .footer-links a:hover { color: rgba(255,255,255,.8); }
+    .footer-social { display: flex; gap: 10px; }
+    .social-link {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.45); transition: var(--transition);
+    }
+    .social-link:hover { background: var(--orange); color: var(--white); }
+    .footer-legal { text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.06); font-size: .76rem; color: rgba(255,255,255,.28); }
+
+    /* ===== SECTION HEADER ===== */
+    .section-title { text-align: center; margin-bottom: 14px; }
+    .section-subtitle { text-align: center; color: var(--gray-600); max-width: 520px; margin: 0 auto; line-height: 1.75; font-size: .95rem; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 920px) {
+      .problem-grid, .services-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .stats-strip { gap: 24px; }
+      .stat-divider { display: none; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 64px 0; }
+      .process-steps { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { justify-content: center; }
+      .contact-form { padding: 28px 18px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .platforms-inner { gap: 20px; }
+      .platforms-list { gap: 18px; }
+    }
+  
+
+    /* Navbar offset helper (in case of anchor jumps) */
+    .nav-spacer { height: var(--nav-height); }
+</style>
+<meta content="index,follow" name="robots"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+<link rel="shortcut icon" href="/assets/favicon.png">
+</head>
+<body>
+<!-- ========== NAVBAR ========== -->
+<nav aria-label="Navegación principal" id="navbar">
+<div class="container nav-inner">
+<a aria-label="Providentia - Inicio" class="nav-logo" href="index.html">
+<span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.25rem;color:#00167a;letter-spacing:-0.02em;">Providentia</span>
+</a>
+<ul class="nav-links" role="list"><a class="active" href="index.html">Inicio</a>
+<a class="active" href="index.html#servicios">Servicios</a>
+<a href="productos.html">Planes</a>
+<a href="nosotros.html">Nosotros</a>
+<a href="redes-sociales.html">Redes</a>
+<a href="contacto.html">Contacto</a>
+</ul>
+<a class="btn btn--primary nav-cta" href="contacto.html">Agenda una llamada</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú" class="hamburger" id="hamburgerBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<!-- Mobile menu -->
+<div aria-label="Menú móvil" class="mobile-menu" id="mobileMenu" role="dialog">
+<button aria-label="Cerrar menú" class="mobile-close" id="mobileClose">×</button>
+<a class="mobile-nav-link" href="#servicios">Servicios</a>
+<a class="mobile-nav-link" href="#planes">Planes</a>
+<a class="mobile-nav-link" href="nosotros.html">Nosotros</a>
+<a class="mobile-nav-link" href="redes-sociales.html">Redes Sociales</a>
+<a class="mobile-nav-link" href="productos.html">Catálogo</a>
+<a class="mobile-nav-link" href="#proceso">Proceso</a>
+<a class="mobile-nav-link" href="contacto.html">Contacto</a>
+<a class="btn btn--primary" href="contacto.html" style="margin-top:16px;">Agenda una llamada</a>
+</div>
+<!-- ========== HERO ========== -->
+<section aria-label="Propuesta de valor" id="inicio">
+<div id="hero">
+<svg aria-hidden="true" class="hero-grid" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="60" id="grid" patternunits="userSpaceOnUse" width="60">
+<path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00167a" stroke-width="0.6"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+<div class="hero-gradient"></div>
+<div aria-hidden="true" class="hero-deco"></div>
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge reveal">
+<span class="hero-badge-dot"></span>
+          Agencia premium de redes sociales
+        </div>
+<h1 class="hero-title reveal reveal-delay-1">
+          Tu marca merece redes<br/>
+          que generen <span class="highlight">clientes reales.</span>
+</h1>
+<p class="hero-sub reveal reveal-delay-2">
+          Manejamos tus redes sociales con estrategia, contenido profesional y optimización continua — para que tu negocio crezca, no solo tus seguidores.
+        </p>
+<div class="hero-ctas reveal reveal-delay-3">
+<a class="btn btn--primary" href="#contacto">Agenda una llamada →</a>
+<a class="btn btn--outline" href="#planes">Ver planes</a>
+</div>
+<!-- STATS -->
+<div class="stats-strip reveal reveal-delay-4">
+<div class="stat-item">
+<div class="stat-number"><span id="statViews">70</span><span class="stat-plus">M+</span></div>
+<div class="stat-label">Views generados</div>
+</div>
+<div aria-hidden="true" class="stat-divider"></div>
+<div class="stat-item">
+<div class="stat-number">10<span class="stat-plus">M+</span></div>
+<div class="stat-label">Interacciones generadas</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== PLATFORMS BANNER ========== -->
+<div aria-label="Plataformas que manejamos" class="platforms-banner">
+<div class="container">
+<div class="platforms-inner">
+<span class="platforms-label" style="color:var(--orange);opacity:1;">Trabajamos en</span>
+<ul class="platforms-list" role="list">
+<li class="platform-item">
+<!-- Instagram -->
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="20" rx="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+          Instagram
+        </li>
+<li class="platform-item">
+<!-- TikTok -->
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.07a8.16 8.16 0 0 0 4.77 1.52V7.15a4.85 4.85 0 0 1-1-.46z"></path></svg>
+          TikTok
+        </li>
+<li class="platform-item">
+<!-- Facebook -->
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          Facebook
+        </li>
+<li class="platform-item">
+<!-- LinkedIn -->
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          LinkedIn
+        </li>
+<li class="platform-item">
+<!-- X / Twitter -->
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          X (Twitter)
+        </li>
+<li class="platform-item">
+<!-- Google Business -->
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z" fill="#4285F4"></path></svg>
+          Google Business
+        </li>
+<li class="platform-item">
+<!-- YouTube -->
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"></path></svg>
+          YouTube
+        </li>
+</ul></div>
+</div>
+</div>
+<!-- ========== PROBLEMA / SOLUCIÓN ========== -->
+<section aria-label="Problema y solución" class="section" id="problema">
+<div class="container">
+<div class="problem-grid">
+<div class="problem-col reveal">
+<span class="tag">El problema</span>
+<h2>Una imagen descuidada<br/>te cuesta clientes.</h2>
+<p>La mayoría de negocios publica sin estrategia, sin consistencia y sin resultados. Las redes se convierten en una tarea que nadie quiere hacer — y se nota.</p>
+<ul class="problem-list" role="list">
+<li class="problem-item"><span aria-hidden="true" class="problem-icon bad">✕</span><p>Publicaciones inconsistentes que transmiten desorganización</p></li>
+<li class="problem-item"><span aria-hidden="true" class="problem-icon bad">✕</span><p>Sin estrategia de contenido ni dirección de marca clara</p></li>
+<li class="problem-item"><span aria-hidden="true" class="problem-icon bad">✕</span><p>Alcance mínimo, cero nuevos clientes desde redes</p></li>
+<li class="problem-item"><span aria-hidden="true" class="problem-icon bad">✕</span><p>Tiempo del dueño invertido en algo que no es su negocio</p></li>
+</ul>
+</div>
+<div class="problem-col reveal reveal-delay-2">
+<span class="tag">La solución</span>
+<h2>Redes que trabajan<br/>para ti, cada día.</h2>
+<p>Providentia toma el control total de tu presencia digital con un equipo profesional, procesos claros y foco total en resultados que importan: consultas, leads y clientes.</p>
+<ul class="problem-list" role="list">
+<li class="problem-item"><span aria-hidden="true" class="problem-icon good">✓</span><p>Estrategia de contenido personalizada para tu industria</p></li>
+<li class="problem-item"><span aria-hidden="true" class="problem-icon good">✓</span><p>Producción profesional: reels, carruseles e historias con diseño</p></li>
+<li class="problem-item"><span aria-hidden="true" class="problem-icon good">✓</span><p>Optimización continua basada en datos reales de tu cuenta</p></li>
+<li class="problem-item"><span aria-hidden="true" class="problem-icon good">✓</span><p>Reportes claros para que siempre sepas qué está pasando</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== SERVICIOS ========== -->
+<section aria-label="Servicios" class="section section--gray" id="servicios">
+<div class="container">
+<span class="tag" style="display:block;text-align:center;">Lo que hacemos</span>
+<h2 class="section-title reveal">Servicios diseñados para crecer</h2>
+<p class="section-subtitle reveal reveal-delay-1">Cuatro servicios especializados, un solo objetivo: que tu negocio sea descubierto, elegido y recordado.</p>
+<div class="services-grid">
+<div class="service-card reveal reveal-delay-1">
+<div aria-hidden="true" class="service-icon">
+<svg fill="none" height="22" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><rect height="14" rx="2" width="20" x="2" y="3"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+</div>
+<h3>Manejo mensual de redes sociales</h3>
+<p>Tu presencia digital en manos de un equipo que entiende algoritmos, tendencias y, sobre todo, a tu audiencia. Nos encargamos de todo, tú te enfocas en tu negocio.</p>
+<ul class="service-features" role="list">
+<li>Estrategia de contenido mensual</li>
+<li>Producción de reels, carruseles e historias</li>
+<li>Calendario editorial estructurado</li>
+<li>Copywriting orientado a conversión</li>
+<li>Optimización de perfil y bio</li>
+<li>Reportes de desempeño periódicos</li>
+</ul>
+</div>
+<div class="service-card reveal reveal-delay-2">
+<div aria-hidden="true" class="service-icon">
+<svg fill="none" height="22" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+<h3>Rebranding profesional</h3>
+<p>¿Tu imagen actual no refleja lo que realmente vale tu negocio? Rediseñamos tu identidad digital con coherencia visual, tono de voz y presencia que convierte.</p>
+<ul class="service-features" role="list">
+<li>Auditoría de marca e imagen actual</li>
+<li>Rediseño de identidad visual y paleta</li>
+<li>Manual de marca básico</li>
+<li>Nuevas plantillas para redes sociales</li>
+<li>Optimización completa de perfiles</li>
+<li>Definición de tono y voz de marca</li>
+</ul>
+</div>
+<div class="service-card reveal reveal-delay-1">
+<div aria-hidden="true" class="service-icon">
+<svg fill="none" height="22" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+</div>
+<h3>Diseño profesional de sitios web</h3>
+<p>Tu página web es tu mejor vendedor 24/7. Diseñamos sitios modernos, rápidos y optimizados para convertir visitantes en clientes, con una identidad visual que impacta desde el primer clic.</p>
+<ul class="service-features" role="list">
+<li>Diseño UI/UX a medida</li>
+<li>Desarrollo responsive para todos los dispositivos</li>
+<li>Optimización SEO desde la base</li>
+<li>Integración con redes sociales y WhatsApp</li>
+<li>Landing pages de alta conversión</li>
+<li>Mantenimiento y soporte continuo</li>
+</ul>
+</div>
+<div class="service-card reveal reveal-delay-2">
+<div aria-hidden="true" class="service-icon">
+<svg fill="none" height="22" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<h3>Asesoramiento para creadores de contenido y marcas digitales</h3>
+<p>Ya seas creador, influencer o marca digital, te guiamos con estrategia personalizada para crecer con dirección, monetizar tu audiencia y posicionarte como referente en tu nicho.</p>
+<ul class="service-features" role="list">
+<li>Desarrollo de marca personal o digital</li>
+<li>Estrategia de crecimiento en redes</li>
+<li>Guía de monetización y colaboraciones</li>
+<li>Sesiones 1:1 de consultoría</li>
+<li>Análisis de métricas y ajuste de contenido</li>
+<li>Posicionamiento en nicho específico</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== PROCESO ========== -->
+<section aria-label="Proceso de trabajo" class="section" id="proceso">
+<div class="container">
+<span class="tag" style="display:block;text-align:center;">Cómo trabajamos</span>
+<h2 class="section-title reveal">Un proceso claro, sin sorpresas</h2>
+<p class="section-subtitle reveal reveal-delay-1">Del primer contacto al primer resultado, sabemos exactamente qué hacemos y cuándo.</p>
+<div class="process-steps">
+<div class="process-step reveal">
+<div aria-label="Paso 1" class="step-number">1</div>
+<h3>Diagnóstico</h3>
+<p>Analizamos tus redes actuales, tu competencia y audiencia para entender desde dónde partimos.</p>
+</div>
+<div class="process-step reveal reveal-delay-1">
+<div aria-label="Paso 2" class="step-number">2</div>
+<h3>Estrategia</h3>
+<p>Diseñamos un plan de contenido específico para tus objetivos: alcance, leads, posicionamiento.</p>
+</div>
+<div class="process-step reveal reveal-delay-2">
+<div aria-label="Paso 3" class="step-number">3</div>
+<h3>Producción</h3>
+<p>Creamos y programamos todo el contenido: reels, carruseles, historias, copy y diseño incluido.</p>
+</div>
+<div class="process-step reveal reveal-delay-3">
+<div aria-label="Paso 4" class="step-number">4</div>
+<h3>Optimización</h3>
+<p>Revisamos datos, ajustamos estrategia y te presentamos reportes con lo que funciona.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== PLANES ========== -->
+<section aria-label="Planes y precios" id="planes">
+<div class="container">
+<div class="plans-intro">
+<span class="tag">Planes</span>
+<h2 class="reveal">Planes para cada etapa<br/>de tu negocio</h2>
+<p class="reveal reveal-delay-1">Sin contratos anuales forzosos, sin letras pequeñas. Elige el plan que se ajuste a donde estás hoy.</p>
+</div>
+<div class="reveal" style="text-align:center;margin-bottom:32px;">
+<a class="btn btn--outline" href="productos.html" style="border-radius:100px;font-size:.88rem;">Ver catálogo completo →</a>
+</div>
+<div class="plans-scroll-wrapper reveal">
+<div class="plans-grid" role="list">
+<!-- B: Tester (accesible) -->
+<div class="plan-card accessible" role="listitem">
+<div class="plan-badge badge-blue">Accesible</div>
+<div class="plan-name">Tester</div>
+<div class="plan-networks">Instagram</div>
+<div class="plan-price"><span class="amount">$59,99</span><span class="period">/mes</span></div>
+<ul class="plan-features" role="list">
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-x">—</span> Sin estrategia</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-x">—</span> Sin optimización</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-x">—</span> Sin diagnóstico</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> 2 Reels + 2 Historias + 1 Carrusel (semanal)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte básico</li>
+</ul>
+<div class="plan-cta"><a class="btn btn--outline-dark" href="#contacto">Empezar</a></div>
+</div>
+<!-- C: Básico -->
+<div class="plan-card" role="listitem">
+<div class="plan-name">Básico</div>
+<div class="plan-networks">Instagram</div>
+<div class="plan-price"><span class="amount">$129,99</span><span class="period">/mes</span></div>
+<ul class="plan-features" role="list">
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Estrategia básica</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Optimización incluida</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Diagnóstico básico</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Propuesta de línea gráfica</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> 4 Reels + 3 Carruseles + 7 Historias (semanal)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte básico mensual</li>
+</ul>
+<div class="plan-cta"><a class="btn btn--outline-dark" href="#contacto">Empezar</a></div>
+</div>
+<!-- D: Básico+ -->
+<div class="plan-card" role="listitem">
+<div class="plan-name">Básico +</div>
+<div class="plan-networks">Instagram, TikTok, Facebook, Pinterest</div>
+<div class="plan-price"><span class="amount">$199,99</span><span class="period">/mes</span></div>
+<ul class="plan-features" role="list">
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Estrategia básica</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Optimización incluida</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Diagnóstico básico con data</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Propuesta de línea gráfica</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte inicial de arranque</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> 5 Reels + 5 Carruseles + 10 Historias (semanal)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte básico mensual</li>
+</ul>
+<div class="plan-cta"><a class="btn btn--outline-dark" href="#contacto">Empezar</a></div>
+</div>
+<!-- E: Plus (RECOMENDADO) -->
+<div class="plan-card recommended" role="listitem">
+<div class="plan-badge">Recomendado</div>
+<div class="plan-name">Plus</div>
+<div class="plan-networks">Instagram, TikTok, Facebook, Pinterest</div>
+<div class="plan-price"><span class="amount">$399,99</span><span class="period">/mes</span></div>
+<ul class="plan-features" role="list">
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Estrategia profunda</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Optimización incluida</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Diagnóstico completo</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Propuesta de línea gráfica</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte inicial de arranque</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Creación de Buyer Persona</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> 7 Reels + 7 Carruseles + 15 Historias (semanal)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Automatización simple incluida</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte básico cada 15 días</li>
+</ul>
+<div class="plan-cta"><a class="btn btn--primary" href="#contacto">Solicitar propuesta</a></div>
+</div>
+<!-- F: Pro -->
+<div class="plan-card" role="listitem">
+<div class="plan-name">Pro</div>
+<div class="plan-networks">Instagram, TikTok, Facebook, Google Business Profile, Pinterest</div>
+<div class="plan-price"><span class="amount">$499,99</span><span class="period">/mes</span></div>
+<ul class="plan-features" role="list">
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Todo lo del plan Plus</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Creación de Buyer Persona</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Sesión estratégica mensual 1:1 (videollamada)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Gestión de comunidad — comentarios y DMs</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Análisis mensual de competencia</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Copywriting enfocado en conversión</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> 10 Reels + 10 Carruseles + 20 Historias (semanal)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte avanzado cada 15 días con recomendaciones</li>
+</ul>
+<div class="plan-cta"><a class="btn btn--outline-dark" href="#contacto">Empezar</a></div>
+</div>
+<!-- G: Pro+ -->
+<div class="plan-card" role="listitem">
+<div class="plan-badge badge-orange">Premium</div>
+<div class="plan-name">Pro +</div>
+<div class="plan-networks">Instagram, TikTok, Facebook, Google Business Profile, Pinterest, YouTube</div>
+<div class="plan-price"><span class="amount">$999,99</span><span class="period">/mes</span></div>
+<ul class="plan-features" role="list">
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Todo lo del plan Pro</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Campaña de contenido viral mensual</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Piezas diseñadas para publicidad pagada (ads)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Gestión de reseñas Google Business Profile ⭐</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Landing page o actualización web mensual</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Account manager dedicado — contacto directo</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> 20 Reels + 20 Carruseles + 20 Historias (semanal)</li>
+<li class="plan-feature"><span aria-hidden="true" class="fi fi-check">✓</span> Reporte ejecutivo semanal con métricas y próximos pasos</li>
+</ul>
+<div class="plan-cta"><a class="btn btn--outline-dark" href="#contacto">Empezar</a></div>
+</div>
+</div>
+</div>
+<!-- COMPARADOR -->
+<div class="compare-section reveal">
+<div class="compare-toggle">
+<button aria-controls="compareTable" aria-expanded="false" id="compareToggle">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" style="transition:.3s" viewbox="0 0 24 24" width="16"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          Ver comparativa completa
+        </button>
+</div>
+<div aria-label="Tabla comparativa de planes" class="compare-table-wrap" id="compareTable" role="region">
+<table class="compare-table">
+<thead>
+<tr>
+<th scope="col">Característica</th>
+<th scope="col">Tester</th>
+<th scope="col">Básico</th>
+<th scope="col">Básico +</th>
+<th scope="col" style="background:#cc5a10;">Plus ⭐</th>
+<th scope="col">Pro</th>
+<th scope="col">Pro +</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Precio/mes</td><td>$59,99</td><td>$129,99</td><td>$199,99</td><td class="rec-col">$399,99</td><td>$499,99</td><td>$999,99</td></tr>
+<tr><td>Redes</td><td>IG</td><td>IG</td><td>IG, TK, FB, Pin</td><td class="rec-col">IG, TK, FB, Pin</td><td>IG, TK, FB, Google Business Profile*, Pin</td><td>IG, TK, FB, Google Business Profile*, Pin, YT</td></tr>
+<tr><td>Estrategia</td><td>—</td><td>Básica</td><td>Básica</td><td class="rec-col">Profunda</td><td>Profunda</td><td>Completa</td></tr>
+<tr><td>Optimización</td><td>—</td><td>✓</td><td>✓</td><td class="rec-col">✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Diagnóstico</td><td>—</td><td>Básico</td><td>Básico+</td><td class="rec-col">Completo</td><td>Completo</td><td>Completo</td></tr>
+<tr><td>Línea gráfica</td><td>—</td><td>✓</td><td>✓</td><td class="rec-col">✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Reporte inicial</td><td>—</td><td>—</td><td>✓</td><td class="rec-col">✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Buyer Persona</td><td>—</td><td>—</td><td>—</td><td class="rec-col">✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Reels/sem</td><td>2</td><td>4</td><td>5</td><td class="rec-col">7</td><td>10</td><td>20</td></tr>
+<tr><td>Carruseles/sem</td><td>1</td><td>3</td><td>5</td><td class="rec-col">7</td><td>10</td><td>20</td></tr>
+<tr><td>Historias/sem</td><td>2</td><td>7</td><td>10</td><td class="rec-col">15</td><td>20</td><td>20</td></tr>
+<tr><td>Sesión 1:1 mensual</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>✓</td><td>✓</td></tr>
+<tr><td>Gestión comunidad (DMs)</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>✓</td><td>✓</td></tr>
+<tr><td>Análisis de competencia</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>Mensual</td><td>Mensual</td></tr>
+<tr><td>Copywriting conversión</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>✓</td><td>✓</td></tr>
+<tr><td>Campaña viral mensual</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>—</td><td>✓</td></tr>
+<tr><td>Piezas para ads</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>—</td><td>✓</td></tr>
+<tr><td>Google Business Profile</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>✓</td><td>✓</td></tr>
+<tr><td>Landing page mensual</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>—</td><td>✓</td></tr>
+<tr><td>Account manager dedicado</td><td>—</td><td>—</td><td>—</td><td class="rec-col">—</td><td>—</td><td>✓</td></tr>
+<tr><td>Reportes</td><td>Básico</td><td>Mensual</td><td>Mensual</td><td class="rec-col">Cada 15 días</td><td>Avanzado c/15d</td><td>Ejecutivo semanal</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== CONTACTO — cream bg ========== -->
+<section aria-label="Formulario de contacto" id="contacto">
+<div class="container">
+<div class="contact-grid">
+<!-- Left -->
+<div class="contact-left reveal">
+<span class="tag">Hablemos</span>
+<h2>¿Listo para que tus redes generen <span class="highlight">clientes reales?</span></h2>
+<p>Cuéntanos sobre tu negocio y te preparamos una propuesta personalizada. Sin compromiso, sin presiones.</p>
+<div class="contact-info">
+<div class="contact-info-item">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+<!-- REEMPLAZAR CON TU EMAIL REAL -->
+<span><a href="mailto:contacto@providentia.com">contacto@providentia.com</a></span>
+</div>
+<div class="contact-info-item">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+<!-- REEMPLAZAR CON TU TELÉFONO REAL -->
+<span>+593 XXX XXX XXX</span>
+</div>
+<div class="contact-info-item">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 2H3v16h5l4 4 4-4h5V2z"></path></svg>
+<!-- REEMPLAZAR CON TU LINK DE WHATSAPP -->
+<a href="https://wa.me/593XXXXXXXXX" rel="noopener noreferrer" style="color:inherit;" target="_blank">WhatsApp directo</a>
+</div>
+</div>
+</div>
+<!-- Form -->
+<div class="contact-form reveal reveal-delay-2">
+<form action="/" id="contactForm" method="POST" name="contacto-providentia" netlify="" netlify-honeypot="bot-field" novalidate="">
+<input name="form-name" type="hidden" value="contacto-providentia"/>
+<p style="display:none;"><input name="bot-field"/></p>
+<div class="form-group">
+<label for="nombre">Nombre completo *</label>
+<input aria-required="true" id="nombre" name="nombre" placeholder="Tu nombre" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="empresa">Empresa / Negocio *</label>
+<input aria-required="true" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="contacto_val">WhatsApp o Email *</label>
+<input aria-required="true" id="contacto_val" name="contacto_val" placeholder="+593 XXX XXX XXX o tu@email.com" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="tamano">Tamaño del negocio *</label>
+<select aria-required="true" id="tamano" name="tamano" required="">
+<option disabled="" selected="" value="">Selecciona una opción</option>
+<option value="solo">Solo (freelancer / emprendimiento)</option>
+<option value="micro">Micro (2–10 colaboradores)</option>
+<option value="pequena">Pequeña (11–50 colaboradores)</option>
+<option value="mediana">Mediana (50+ colaboradores)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="objetivo">Objetivo principal *</label>
+<select aria-required="true" id="objetivo" name="objetivo" required="">
+<option disabled="" selected="" value="">¿Qué buscas lograr?</option>
+<option value="clientes">Generar más clientes / leads</option>
+<option value="imagen">Mejorar imagen de marca</option>
+<option value="alcance">Aumentar alcance y visibilidad</option>
+<option value="rebranding">Rebranding completo</option>
+<option value="web">Diseño de sitio web</option>
+<option value="asesoramiento">Asesoramiento para creadores / marcas digitales</option>
+<option value="todo">Todo lo anterior</option>
+</select>
+</div>
+<div class="form-group">
+<label for="mensaje">¿En qué servicio o producto estás interesado?</label>
+<textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente qué servicio o producto te interesa y sobre tu negocio…"></textarea>
+</div>
+<div class="form-submit">
+<button aria-label="Enviar solicitud de propuesta" class="btn btn--primary" type="submit">Solicitar propuesta →</button>
+</div>
+<div aria-live="polite" class="form-notification" id="formNotification" role="alert">
+            ¡Recibimos tu mensaje! Te contactaremos pronto. 🎉
+          </div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== FOOTER ========== -->
+<footer aria-label="Pie de página">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-logo">
+<span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;color:rgba(255,255,255,0.65);letter-spacing:-0.02em;">Providentia</span>
+</div>
+<nav aria-label="Footer navigation">
+<ul class="footer-links" role="list">
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#planes">Planes</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="redes-sociales.html">Redes Sociales</a></li>
+<li><a href="productos.html">Catálogo</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+<div class="footer-social">
+<a aria-label="Instagram" class="social-link" href="https://instagram.com/providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="20" rx="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+<a aria-label="TikTok" class="social-link" href="https://tiktok.com/@providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.07a8.16 8.16 0 0 0 4.77 1.52V7.15a4.85 4.85 0 0 1-1-.46z"></path></svg>
+</a>
+<a aria-label="Facebook" class="social-link" href="https://facebook.com/providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+</a>
+<a aria-label="LinkedIn" class="social-link" href="https://linkedin.com/company/providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+<a aria-label="X (Twitter)" class="social-link" href="https://x.com/providentiag" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="14" viewbox="0 0 24 24" width="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+</div>
+</div>
+<p class="footer-legal">© <span id="currentYear"></span> Providentia Group. Todos los derechos reservados. · <a href="privacidad.html" style="color:inherit;">Política de privacidad</a></p>
+</div>
+</footer>
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+  // Helper: safely run after DOM is ready (file is single-page, but keep robust)
+  (function () {
+    const onReady = (fn) => (document.readyState === "loading")
+      ? document.addEventListener("DOMContentLoaded", fn)
+      : fn();
+
+    onReady(() => {
+      // Current year
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Navbar scroll + dynamic offset for anchors
+      const navbar = document.getElementById("navbar");
+      const setNavHeight = () => {
+        if (!navbar) return;
+        const h = Math.ceil(navbar.getBoundingClientRect().height);
+        document.documentElement.style.setProperty("--nav-height", h + "px");
+      };
+      setNavHeight();
+      window.addEventListener("resize", setNavHeight, { passive: true });
+
+      if (navbar) {
+        const onScroll = () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 60);
+          // Height changes when scrolled (padding changes), keep anchors accurate
+          setNavHeight();
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+      }
+
+      // Hamburger menu (mobile)
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const mobileMenu  = document.getElementById("mobileMenu");
+      const mobileClose = document.getElementById("mobileClose");
+
+      function openMenu()  {
+        if (!mobileMenu || !hamburgerBtn) return;
+        mobileMenu.classList.add("open");
+        hamburgerBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        if (!mobileMenu || !hamburgerBtn) return;
+        mobileMenu.classList.remove("open");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      if (hamburgerBtn) hamburgerBtn.addEventListener("click", () => {
+        const isOpen = mobileMenu && mobileMenu.classList.contains("open");
+        isOpen ? closeMenu() : openMenu();
+      });
+      if (mobileClose) mobileClose.addEventListener("click", closeMenu);
+      document.querySelectorAll(".mobile-nav-link").forEach(l => l.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu && mobileMenu.classList.contains("open")) closeMenu();
+      });
+
+      // Scroll reveal
+      const revealEls = document.querySelectorAll(".reveal");
+      if (revealEls.length) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+        revealEls.forEach(el => observer.observe(el));
+      }
+
+      // Animated counter (70M)
+      const statEl = document.getElementById("statViews");
+      if (statEl) {
+        const animateCount = (el, target, duration) => {
+          let start = 0;
+          const startTime = performance.now();
+          const tick = (now) => {
+            const t = Math.min((now - startTime) / duration, 1);
+            const val = Math.floor(start + (target - start) * t);
+            el.textContent = String(val);
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        };
+
+        let animated = false;
+        const statObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+              animated = true;
+              animateCount(statEl, 70, 1200);
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.6 });
+
+        statObserver.observe(statEl);
+      }
+
+      // Compare table toggle
+      const compareToggle = document.getElementById("compareToggle");
+      const compareTable  = document.getElementById("compareTable");
+      if (compareToggle && compareTable) {
+        compareToggle.addEventListener("click", () => {
+          const isOpen = compareTable.classList.toggle("open");
+          compareToggle.setAttribute("aria-expanded", String(isOpen));
+          const svg = compareToggle.querySelector("svg");
+          if (svg) svg.style.transform = isOpen ? "rotate(180deg)" : "";
+        });
+      }
+
+      // Netlify form submit (AJAX, keeps single-page + shows feedback)
+      const form = document.getElementById("contactForm");
+      const notification = document.getElementById("formNotification");
+
+      const showNote = (type, msg) => {
+        if (!notification) return;
+        notification.className = "form-notification " + (type === "ok" ? "success" : "error");
+        notification.textContent = msg;
+        notification.style.display = "block";
+      };
+
+      if (form) {
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const btn = form.querySelector('[type="submit"]');
+          const original = btn ? btn.textContent : "";
+
+          try {
+            if (btn) { btn.disabled = true; btn.textContent = "Enviando..."; }
+
+            const formData = new FormData(form);
+            // Ensure Netlify gets the form-name
+            if (!formData.get("form-name")) {
+              const name = form.getAttribute("name") || "contacto-providentia";
+              formData.set("form-name", name);
+            }
+            const body = new URLSearchParams();
+            for (const [k, v] of formData.entries()) body.append(k, String(v));
+
+            const res = await fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: body.toString()
+            });
+
+            if (!res.ok) throw new Error("HTTP " + res.status);
+
+            showNote("ok", "¡Listo! Recibimos tu información. Te contactaremos pronto.");
+            form.reset();
+          } catch (err) {
+            showNote("err", "Ups, hubo un problema al enviar. Intenta de nuevo en unos segundos.");
+          } finally {
+            if (btn) { btn.disabled = false; btn.textContent = original || "Enviar"; }
+          }
+        });
+      }
+    });
+  })();
+</script>
+<script>
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const map = {
+    '': 'index.html',
+    'index.html': 'index.html',
+    'nosotros.html': 'nosotros.html',
+    'productos.html': 'productos.html',
+    'catalogo.html': 'catalogo.html',
+    'contacto.html': 'contacto.html'
+  };
+  const current = map[path] || path;
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if(href === current) a.classList.add('active');
+  });
+  const y = document.getElementById('year');
+  if(y) y.textContent = String(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>
